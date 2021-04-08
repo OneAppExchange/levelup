@@ -66,7 +66,7 @@ Notice the node_module folder and that we can run lwc-services commmand line usi
   sniff  Exports configuration information as JS files
   watch  Runs a Lightning Web Components project in watch mode
 
-read more about (command line commands and options)[https://github.com/muenzpraeger/create-lwc-app]
+read more about [command line commands and options](https://github.com/muenzpraeger/create-lwc-app)
 
 
 
