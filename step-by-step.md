@@ -91,7 +91,7 @@ Lets add the following scripts to package.json
 ```
 
 
-In case we want to use rollup we will append *-b rollup*. And in case we need webpack addtional config we append *-w route-to/webpack.config.js*.  
+In case we want to use rollup we will append **-b rollup**. And in case we need webpack addtional config we append **-w route-to/webpack.config.js**.  
 For more info of the webpack config file [click here](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin) 
 
 Let's create the lwc-service config file
