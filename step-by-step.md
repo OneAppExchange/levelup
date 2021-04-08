@@ -92,7 +92,7 @@ Lets add the following scripts to package.json
 
 
 In case we want to use rollup we will append *-b rollup*. And in case we need webpack addtional config we append *-w route-to/webpack.config.js*.  
-For more info of the webpack config file [click here] (https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin) 
+For more info of the webpack config file [click here](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin) 
 
 Let's create the lwc-service config file
 
@@ -102,7 +102,7 @@ In the root folder we create the config file
 $ touch lwc-service.config.js
 ```
 
-Add this content to lwc-service.config.js ( for more information of this config file [click here] (https://github.com/muenzpraeger/create-lwc-app/blob/main/packages/lwc-services/example/lwc-services.config.js) )
+Add this content to lwc-service.config.js ( for more information of this config file [click here](https://github.com/muenzpraeger/create-lwc-app/blob/main/packages/lwc-services/example/lwc-services.config.js) )
 
 ```
 module.exports = {
