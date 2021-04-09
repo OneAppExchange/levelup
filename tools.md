@@ -5,6 +5,10 @@ One of the main advantages of moving to the NPM world is that there are a lot of
 Let's start looking for some usefull 
 
 
+## ESLint
+
+## Prettier
+
 ## Husky
 
 
@@ -12,6 +16,9 @@ Let's start looking for some usefull
 
 
 ## Sa11y
+
+
+## Storybook
 
 
 ## Webpack Bundle Analyzer
