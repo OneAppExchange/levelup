@@ -59,4 +59,4 @@ describe('pricing-view', () => {
 });
 ````
 
-Let's create a new test case, to check if it's accessible. Before that we need to install the @sa11y/jest (see tools for more info [click here](.tools.md#sa11y) ). 
+Let's create a new test case, to check if it's accessible. Before that we need to install the @sa11y/jest (see tools for more info [click here](.tools.md#sa11y.md) ). 
