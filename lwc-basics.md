@@ -60,3 +60,45 @@ describe('pricing-view', () => {
 ````
 
 Let's create a new test case, to check if it's accessible. Before that we need to install the @sa11y/jest (see tools for more info [click here](./tools.md#sa11y) ). 
+
+Now we can add a new test case for accesibility, but notice that we added also and afterEach that is important to "reset" the dom.
+
+````
+import { createElement } from 'lwc';
+import View from 'pricing/view';
+
+describe('pricing-view', () => {
+    afterEach(() => {
+        // The jsdom instance is shared across test cases in a single file so reset the DOM
+        while (document.body.firstChild) {
+            document.body.removeChild(document.body.firstChild);
+        }
+    });
+
+    it('displays hello', () => {
+        // Create element
+        const element = createElement('pricing-view', {
+            is: View
+        });
+        document.body.appendChild(element);
+
+        // Verify displayed greeting
+        const div = element.shadowRoot.querySelector('div');
+        expect(div.textContent).toBe('Hello World !');
+    });
+
+    it('is accessible', () => {
+        const element = createElement('pricing-view', {
+            is: View
+        });
+
+        document.body.appendChild(element);
+
+        return Promise.resolve().then(() => expect(element).toBeAccessible());
+    });
+    
+});
+````
+
+
+
