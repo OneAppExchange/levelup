@@ -1,4 +1,6 @@
 import { LightningElement } from 'lwc';
 
-export default class View extends LightningElement {}
+export default class View extends LightningElement {
+    name = 'World';
+}
 

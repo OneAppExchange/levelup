@@ -2,7 +2,7 @@
     "modules": [
         {
             "dir": "src/modules"
-        }
+        }       
     ],
     "expose": [
         "pricing/view"

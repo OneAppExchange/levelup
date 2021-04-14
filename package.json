@@ -6,10 +6,11 @@
   "license": "MIT",
   "devDependencies": {
     "lwc-services": "^3.0.4",
-    "webpack-bundle-analyzer": "^4.4.0"
+    "webpack-bundle-analyzer": "^4.4.1"
   },
   "scripts": {
     "build": "lwc-services build -m production",
+    "build:js": "lwc-services build -w .webpack.config.js",
     "build:development": "lwc-services build",
     "test:unit": "lwc-services test:unit",
     "serve": "node scripts/server.js",
