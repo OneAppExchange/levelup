@@ -100,5 +100,17 @@ describe('pricing-view', () => {
 });
 ````
 
+### Document and Test our component isolated
+We will used a tool called Storybook, before this we need to install it (see tools for more info [click here](./tools.md#storybook) 
+
+Now let's create the folder for our stories inside our component folder and write our first Story. 
+
+````
+mkdir __stories__
+cd __stories__
+touch basic.stories.js
+````
+
+
 
 
