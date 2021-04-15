@@ -13,6 +13,20 @@ Let's start looking for some usefull
 
 
 ## Jest 
+Jest is a leading platform for Testing and is install as part of the lwc. You may notice that we run jest when we run any of the following scripts:
+
+    "test:unit": "lwc-services test:unit",
+    "test:unit:coverage": "lwc-services test:unit --coverage",
+    "test:unit:debug": "lwc-services test:unit --debug",
+    "test:unit:watch": "lwc-services test:unit --watch",
+
+The configuration file for Jest is in the following path: lwc-services/lib/config/jestConfig.
+
+
+For example if you want to see the test coverage 
+````
+yarn test:unit:coverage
+````
 
 
 ## Sa11y
@@ -56,12 +70,19 @@ registerSa11yMatcher();
 ````
 
 Sa11y give us the possibility to assert the following type of expressions:
+
 ````
 expect(element).toBeAccessible()
 `````
 
 ## Storybook
+Storybook is a great tool for documenting and doing manual testing of components in an isolated way. Is very useful for Shared Libraries of components.
 
+The difference with Jest, is that we need to install it, because isn't part of the lwc.
+
+````
+yarn add storybook -D
+`````
 
 
 
