@@ -1,5 +1,6 @@
-# Basics
-The goal of this document will be learning lwc by adding functionality to our component.
+# First Component
+The goal of this document will be goind step by step and see our first Hello Worl component working.
+
 
 ## Binding
 So far we know that our pricing-view component is a html file, a css and javsacript. 
