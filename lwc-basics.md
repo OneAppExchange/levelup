@@ -114,13 +114,22 @@ touch basic.stories.js
 Now we will create a first version for see how content is render. Lets just export a title "Pricing View" and two stories.
 
 ````
+import component from  'pricing/view';
+
+customElements.define('pricing-view', component.CustomElementConstructor);
+
 export default {
-    title: 'Pricing View'
+    title: 'Components/Pricing/View'
 };
 
-export const Basic = () => `<h1>Basic</h1> Here we document our component for the most common use case`;
+export const Basic = () => `<h1>Basic</h1> 
+    Here we document our component for the most common use case
+    <pricing-view></pricing-view`;
 
-export const Advance = () => `<h1>Advance</h1> Here we document our component but is the advance use case`;
+export const Advance = () => `<h1>Advance</h1> 
+    Here we document our component but is the advance use case
+    <pricing-view></pricing-view
+    `;
 ````
 
 now let's change title for 'Pricing/View' to see how grouping works. We can group multiple levels, depending de number of levels how will render. Try adding another level "Components/Pricing/View" and notice that now appear a new grouping. 
