@@ -102,7 +102,41 @@ Also added a script on our package.json  with the following command.
 
 And a hidden folder .storybook with main.js and preview.js
 
+We will need to do some changes in the configuration files.
 
+````
+const LWCWebpackPlugin = require('lwc-webpack-plugin');
+
+module.exports = {
+  "stories": [
+    "../src/**/*.stories.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)"
+  ],
+  "addons": [
+    "@storybook/addon-links",
+    '@storybook/addon-a11y',
+    "@storybook/addon-essentials"
+  ],
+  webpackFinal: async (config, { configType }) => {
+    // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
+    // You can change the configuration based on that.
+    // 'PRODUCTION' is used when building the static version of storybook.
+    // Override default rules, prevents issues related to loading CSS files.
+    
+    config.plugins.push(
+      new LWCWebpackPlugin()
+    );
+
+    config.module.rules = config.module.rules.filter(
+      f => f.test.toString() !== '/\\.css$/'
+    );   
+    
+    return config;
+  }
+};
+
+
+````
 
 ## Webpack Bundle Analyzer
 
