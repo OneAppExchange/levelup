@@ -1,7 +1,7 @@
 # Lesson 2
 Now what we will do is to add the avility to create a lwc but changing the name.
 
-## Binding
+## Coding
 We will use our first decorator @api.  This decorator is binding a Javascript property with a Template property, so now the template has a property called name, and we can set a value from the template.
 
 
