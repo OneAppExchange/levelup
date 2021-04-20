@@ -51,7 +51,7 @@ Edit the file with the following content
 ### Install LWC Runtime
 
 ```bash
-npm install  lwc-services --save-dev
+yarn add -D  lwc-services
 ```
 
 Notice the node_module folder and that we can run lwc-services commmand line using for example npx lwc-services watch
@@ -173,7 +173,7 @@ view.js
 ```
 import { LightningElement } from 'lwc';
 
-export default class App extends LightningElement {}
+export default class View extends LightningElement {}
 ```
 
 
