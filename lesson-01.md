@@ -7,7 +7,7 @@ So far we know that our pricing-view component is a html file, a css and javsacr
 
 The html file is the template of the web component. For understanding more about web templates [click here](https://www.html5rocks.com/en/tutorials/webcomponents/template/) 
 
-In our template file we will replace "Worl" for {name}, and in our Javascript we will create a new property name with the value "World". 
+In our template file we will replace "World" for {name}, and in our Javascript we will create a new property name with the value "World". 
 So our component will look like 
 
 ````
