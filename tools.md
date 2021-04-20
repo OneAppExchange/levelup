@@ -5,6 +5,9 @@ One of the main advantages of moving to the NPM world is that there are a lot of
 Let's start looking for some usefull 
 
 
+## Ligthning Base Components
+If we want to use ligthning components we need to install them. [npm link] (https://www.npmjs.com/package/lightning-base-components)
+
 ## ESLint
 
 ## Prettier
