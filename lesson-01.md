@@ -2,7 +2,7 @@
 The goal of this document will be goind step by step and see our first Hello Worl component working.
 
 
-## Binding
+## Coding
 So far we know that our pricing-view component is a html file, a css and javsacript. 
 
 The html file is the template of the web component. For understanding more about web templates [click here](https://www.html5rocks.com/en/tutorials/webcomponents/template/) 
@@ -30,7 +30,7 @@ The property name is private, in case we want to set as public we need to add th
 For more information [click here](https://lwc.dev/guide/html_templates#data-binding)
 
 
-### Add testing to our component
+## Testing
 Let's add the testing for this component. We will use Jest, and the standard way of creating test will be a subfolder named "__test__".
 
 ````
@@ -101,7 +101,7 @@ describe('pricing-view', () => {
 });
 ````
 
-### Document and Test our component isolated
+## Documenting
 We will used a tool called Storybook, before this we need to install it (see tools for more info [click here](./tools.md#storybook) 
 
 Now let's create the folder for our stories inside our component folder and write our first Story. 
