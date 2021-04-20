@@ -34,7 +34,7 @@ For more information [click here](https://lwc.dev/guide/html_templates#data-bind
 Let's add the testing for this component. We will use Jest, and the standard way of creating test will be a subfolder named "__test__".
 
 ````
-mkdir __test__
+mkdir __tests__
 cd __tests__
 touch view.test.js
 ````
