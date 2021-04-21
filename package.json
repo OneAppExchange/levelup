@@ -7,6 +7,7 @@
   "devDependencies": {
     "@babel/core": "^7.13.15",
     "@sa11y/jest": "^0.3.0",
+    "@salesforce/sfdx-lwc-jest": "^0.10.4",
     "@storybook/addon-a11y": "^6.2.8",
     "@storybook/addon-actions": "^6.2.8",
     "@storybook/addon-docs": "^6.2.8",

@@ -35,6 +35,32 @@ describe('pricing-view', () => {
         expect(div.textContent).toBe('Hello my friends !');
     });
 
+    it('displays Name by change event target', () => {
+        const EXPECTED = 'New Name';
+
+        // Create element
+        const element = createElement('pricing-view', {
+            is: View
+        });
+        document.body.appendChild(element);
+
+        // Verify default name is different to New Name
+        let div = element.shadowRoot.querySelector('div');
+        expect(div.textContent).not.toBe(`Hello ${EXPECTED}!`);
+
+        // Trigger new Name
+        const inputEl = element.shadowRoot.querySelector('lightning-input');
+        inputEl.value = EXPECTED;
+        inputEl.dispatchEvent(new CustomEvent('change'));
+
+        // Return a promise to wait for any asynchronous DOM updates. Jest
+        // will automatically wait for the Promise chain to complete before
+        // ending the test and fail the test if the promise rejects.
+        return Promise.resolve().then(() => {
+            // Verify displayed New Name
+            expect(div.textContent).toBe(`Hello ${EXPECTED} !`);
+        });
+    });
 
     it('is accessible', () => {
         const element = createElement('pricing-view', {

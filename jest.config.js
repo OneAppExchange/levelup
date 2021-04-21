@@ -7,7 +7,7 @@ module.exports = {
     ...jestConfig,
     // Stubs for 3rd party components
     moduleNameMapper: {
-        '^ui/(.+)$': '<rootDir>/jest-mocks/ui/$1/$1'
+        '^lightning/(.+)$': '<rootDir>/jest-mocks/lightning/$1/$1'
     },
     setupFilesAfterEnv
 };
