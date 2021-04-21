@@ -1,4 +1,4 @@
-# Lesson 2
+# Session 2
 Now what we will do is to add the avility to create a lwc but changing the name.
 
 ## Coding
