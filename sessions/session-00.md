@@ -1,9 +1,8 @@
-# Step by Step
+# Session 0
+The goal of this session 0 or presssion is to have a guide for install basic tools before starting.
 
-## Initialize
 
-
-### Create package.json 
+## Create package.json 
 We can use yarn or npm or just touch package.json and edit. For more information of structure read [npm](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#engines)
 
 ```bash
@@ -48,7 +47,7 @@ Edit the file with the following content
   $RECYCLE.BIN/
 ```
 
-### Install LWC Runtime
+## Install LWC Runtime
 
 ```bash
 yarn add -D  lwc-services
@@ -70,7 +69,7 @@ read more about [command line commands and options](https://github.com/muenzprae
 
 
 
-### Add Scripts to package.json
+## Add Scripts to package.json
 
 A startdard way is to create the a tag scripts on package.json with all the commands that we will use. Now we are adding the lwc so no need to call via npx and remmember all the options
 
@@ -110,7 +109,7 @@ module.exports = {
 };
 ```
 
-### Module Resolution
+## Module Resolution
 There are two ways: 
 
 - Add a lwc.config.json file at the root of the project.
@@ -133,7 +132,7 @@ $ touch lwc.config.json
 
 
 
-### Create basic Folder for LWC
+## Create basic Folder for LWC
 
 ```bash
 $ mkdir -p src/modules/pricing/view
