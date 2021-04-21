@@ -1,4 +1,4 @@
-# Session 
+# Session 3
 The goal of this lesson will be to add some "color" and start using the lightning-base-components. 
 
 We can create our components or we can use external libraries. The lwc provides a mechanism to resolve and we will see this configuring the lwc.config.js
