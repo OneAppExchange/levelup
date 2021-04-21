@@ -6,7 +6,7 @@ The goal of this session 0 or presssion is to have a guide for install basic too
 We can use yarn or npm or just touch package.json and edit. For more information of structure read [npm](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#engines)
 
 ```bash
-$ yarn init
+yarn init
 ```
 
 ### Create the gitignore
@@ -98,7 +98,7 @@ Let's create the lwc-service config file
 In the root folder we create the config file
 
 ```bash
-$ touch lwc-service.config.js
+touch lwc-service.config.js
 ```
 
 Add this content to lwc-service.config.js ( for more information of this config file [click here](https://github.com/muenzpraeger/create-lwc-app/blob/main/packages/lwc-services/example/lwc-services.config.js) )
@@ -117,7 +117,7 @@ There are two ways:
 
 
 ```bash
-$ touch lwc.config.json
+touch lwc.config.json
 ```
 
 ```
@@ -135,16 +135,14 @@ $ touch lwc.config.json
 ## Create basic Folder for LWC
 
 ```bash
-$ mkdir -p src/modules/pricing/view
-$ cd src/modules/pricing/view
+mkdir -p src/modules/pricing/view
+cd src/modules/pricing/view
 ```
 
 ```bash
-$ touch view.html
-$ touch view.css
-$ touch view.js
-$ mkdir __test__
-$ mkdir __stories__
+touch view.html
+touch view.css
+touch view.js
 ```
 
 Now lets add the content to those files
