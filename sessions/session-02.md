@@ -1,5 +1,9 @@
 # Session 2
-Now what we will do is to add the avility to create a lwc but changing the name.
+Now what we will do is to add the avility to create a lwc but changing the name. 
+
+The goal will be understand relation between properties and html attributes
+
+More information about the [@api decorator click here](https://lwc.dev/guide/reference#%40api)
 
 ## Coding
 We will use our first decorator @api.  This decorator is binding a Javascript property with a Template property, so now the template has a property called name, and we can set a value from the template.
