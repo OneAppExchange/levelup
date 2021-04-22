@@ -3,7 +3,7 @@ import { LightningElement, api , track} from 'lwc';
 export default class View extends LightningElement {
     @api name = 'World';
     countClicks = 0;
-    @track countLogs = []; 
+    /** @track **/ countLogs = []; 
 
     handleChange(event) {
         console.log('handle Change' );
