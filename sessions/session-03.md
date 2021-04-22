@@ -31,6 +31,42 @@ So, let go and edit the lwc.config.js and add the npm resolution for lightning-b
 }
 ````
 
+
+We need to install the SLDS, [Salesforce Lightning Design System](https://www.lightningdesignsystem.com/).
+
+````
+yarn add -D @salesforce-ux/design-system
+````
+
+In the  lwc-services.config.js we will need to add as resource, otherwise we will have problems building.
+
+````
+  module.exports = {
+   resources: [{ from: 'src/resources/', to: 'dist/resources/' },
+  {
+    from: 'node_modules/@salesforce-ux/design-system/assets',
+    to: 'dist/SLDS'
+   }
+  ]
+};
+`````
+
+In the index.html we will add the style sheet
+
+`````
+<link
+    rel="stylesheet"
+    href="/SLDS/assets/styles/salesforce-lightning-design-system.min.css"
+/>
+`````
+
+And in the index.js we will need to import shadow
+
+`````
+import '@lwc/synthetic-shadow';
+`````
+
+
 ## Coding
 
 Now lets simple add a ligthning-input to our component
@@ -110,4 +146,10 @@ Now let's add this test case
         });
     });
 ````
+
+## Resources
+
+* [Build Connected Apps Anywhere Using Lightning Base Components](https://developer.salesforce.com/blogs/2020/12/build-connected-apps-anywhere-using-lightning-base-components.html)
+* [LWC Component Reference](https://developer.salesforce.com/docs/component-library/overview/components)
+* 
 
