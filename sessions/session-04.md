@@ -153,4 +153,5 @@ Lets uncomment the track and see now how the reactivity changes with the click
 
 
 ## Resources
+* [Life cycle flows](https://lwc.dev/guide/lifecycle#lifecycle-flow)
 * [Life cycle hooks](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.create_lifecycle_hooks
