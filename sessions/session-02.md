@@ -10,7 +10,7 @@ We will use our first decorator @api.  This decorator is binding a Javascript pr
 
 
 ````
-import { LightningElement } from 'lwc';
+import { LightningElement, @api } from 'lwc';
 
 export default class View extends LightningElement {
     @api name = 'World';
@@ -18,7 +18,18 @@ export default class View extends LightningElement {
 ````
 
 ## See in action
-Let's go to our index.html and change our "hello World!" into a "hello Team!"
+Let's go to our index.html and change our "hello World!" into a "hello Team!". 
+
+On the index.js instead of creating the component dinamically and append it to the main div, we will define the web component, so we can use it as any other html tag.
+
+````
+import { createElement } from 'lwc';
+import MyPricing from  'pricing/view';
+
+customElements.define('pricing-view', MyPricing.CustomElementConstructor);
+
+export { createElement, MyPricing };
+````
 
 
 ````
