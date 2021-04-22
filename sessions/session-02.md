@@ -31,7 +31,6 @@ customElements.define('pricing-view', MyPricing.CustomElementConstructor);
 export { createElement, MyPricing };
 ````
 
-
 ````
   <pricing-view name="team"></pricing-view>
 ````
