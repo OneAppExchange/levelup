@@ -81,5 +81,4 @@ export const Advance = ({name}) => `<h1>Advance</h1>
     Here we document our component but is the advance use case
     <pricing-view name="${name}" ></pricing-view
     `;
-
 ````
