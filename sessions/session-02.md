@@ -10,7 +10,7 @@ We will use our first decorator @api.  This decorator is binding a Javascript pr
 
 
 ````
-import { LightningElement, @api } from 'lwc';
+import { LightningElement, api } from 'lwc';
 
 export default class View extends LightningElement {
     @api name = 'World';
