@@ -2481,6 +2481,11 @@
   dependencies:
     axe-core "4.1.2"
 
+"@salesforce-ux/design-system@^2.14.3":
+  version "2.14.3"
+  resolved "https://registry.yarnpkg.com/@salesforce-ux/design-system/-/design-system-2.14.3.tgz#26f41b0f97a4c22a062570b0dc14447673475f19"
+  integrity sha512-sdbU3INwZ3j40pCZ7l2qk+Wsv44r8/gr4zzPmwEvFzOG+mz6PmC2ix46Y2zY8PG/qCpXqm39VLdrg/vvAZEHvw==
+
 "@salesforce/eslint-config-lwc@^0.9.0":
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/@salesforce/eslint-config-lwc/-/eslint-config-lwc-0.9.0.tgz#0f920c109f2df1e4b63d0b9c374e4098af48ad87"
