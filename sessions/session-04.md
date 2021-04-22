@@ -28,6 +28,13 @@ Run Code When a Component Renders
         {reverseName}
     </div>
 
+    <template for:each={countLogs} for:item="log">
+        <li key={log.clickNum}>
+          {log.time}
+        </li>
+    </template>
+
+        
     <lightning-button label="Button" onclick={handleButton}></lightning-button>
 
     <lightning-input label="Name" value={name} onchange={handleChange}></lightning-input>
