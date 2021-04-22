@@ -16,19 +16,14 @@ $ volta install yarn@1.22.10
 ```
 
 
-## Startup
+## Sessions
 
-There are two ways, one is start with a template
+The most common way to start a LWC OSS projects is using create-lwc-app. But the idea here is to go step by step, installing, configuring, coding and testing so we can deeply understand what internally is going on.
 
-```bash
-# create a simple template under folder my-app
-npx create-lwc-app my-app
-```
-
-or step by step [click here](./step-by-step.md)
+We will go session by session. There is a branch per session so in case we want to see that running just clone it, and in case you want to skip to a session you can checkout the previous one.
 
 
-## Usefull links
+## Resources
 
 - [Good place to start](https://lwc.dev/guide/introduction)
 - [Component Reference](https://developer.salesforce.com/docs/component-library)
