@@ -1,5 +1,7 @@
 # Session 4
-Now lets introduce Component Life cycle Hooks.
+
+Now lets introduce Component Life cycle Hooks. And see how @track decorator works.
+
 
 Web components has the posibility to create callbacks on some life cycle events. The web component hooks are:
 * **connectedCallback**: Invoked each time the custom element is appended into a document-connected element. This will happen each time the node is moved, and may happen before the element's contents have been fully parsed. 
