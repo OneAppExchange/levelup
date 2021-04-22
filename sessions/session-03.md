@@ -147,6 +147,14 @@ Now let's add this test case
     });
 ````
 
+## Documenting
+We need to add the stylesheets to the Storybook, one possible way is to import the css in the theme.js or preview.js.
+
+````
+import '/node_modules/@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.min.css';
+````
+
+
 ## Resources
 
 * [Build Connected Apps Anywhere Using Lightning Base Components](https://developer.salesforce.com/blogs/2020/12/build-connected-apps-anywhere-using-lightning-base-components.html)
