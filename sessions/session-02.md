@@ -5,6 +5,15 @@ The goal will be understand relation between properties and html attributes
 
 More information about the [@api decorator click here](https://lwc.dev/guide/reference#%40api)
 
+## Terminology
+
+**Fields, Properties, and Attributes**
+Declare fields in your component’s JavaScript class. Reference them in your component’s template to dynamically update content.
+
+Field and property are almost interchangeable terms. A component author declares fields in a class. An instance of the class has properties. To component consumers, fields are properties. In a Lightning web component, only fields that a component author decorates with @api are publicly available to consumers as object properties.
+
+Property and attribute are almost interchangeable terms and can be confusing. Generally speaking, in HTML we talk about attributes, and in JavaScript we talk about properties.
+
 ## Coding
 We will use our first decorator @api.  This decorator is binding a Javascript property with a Template property, so now the template has a property called name, and we can set a value from the template.
 
@@ -82,3 +91,7 @@ export const Advance = ({name}) => `<h1>Advance</h1>
     <pricing-view name="${name}" ></pricing-view
     `;
 ````
+
+## Resources
+* [Fields, Properties and Attributes](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.js_props_intro)
+* 
