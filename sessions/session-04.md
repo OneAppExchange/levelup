@@ -40,6 +40,7 @@ import { LightningElement, api , track} from 'lwc';
 export default class View extends LightningElement {
     @api name = 'World';
     countClicks = 0;
+    /* @track */ countLogs = []; 
 
     handleChange(event) {
         console.log('handle Change' );
@@ -49,6 +50,7 @@ export default class View extends LightningElement {
     handleButton(event) {
         console.log('handle Button' );
         this.countClicks++;        
+        this.countLogs.push( { clickNum: this.countClicks , time: new Date() } );
     }
 
     constructor() {
@@ -76,7 +78,8 @@ export default class View extends LightningElement {
         console.log('Reverse Property with value: ' + this.name ); 
         //console.log('Reverse Property with Count Clicks: ' + this.countClicks ); 
         return this.name.split("").reverse().join("");
-    }       
+    }    
+    
 }
 `````
 
@@ -137,6 +140,8 @@ export { createElement, MyPricing };
 `````
 
 Lets uncomment the console log of countClicks and see that render will be trigger with button click
+
+Lets uncomment the track and see now how the reactivity changes with the click
 
 
 ## Resources
