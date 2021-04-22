@@ -19,7 +19,6 @@ Run Code When a Component Renders
 
 ## Coding
 
-
 ````
 <template>
     <div class="pricing-title">
@@ -137,6 +136,7 @@ document.getElementById('change').addEventListener( "click", change);
 export { createElement, MyPricing };
 `````
 
+Lets uncomment the console log of countClicks and see that render will be trigger with button click
 
 
 ## Resources
