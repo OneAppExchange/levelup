@@ -1,5 +1,5 @@
 # Session 1
-The goal of this document will be goind step by step and see our first Hello Worl component working.
+The goal of this document will be goind step by step and see our first Hello World component working.
 
 
 ## Coding
