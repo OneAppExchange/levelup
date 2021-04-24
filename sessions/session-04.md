@@ -157,3 +157,4 @@ Lets uncomment the track and see now how the reactivity changes with the click
 * [Life cycle hooks](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.create_lifecycle_hooks)
 * [Reactivity Reference](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.reactivity)
 * [Reactivity guide] (https://lwc.dev/guide/javascript_reactive)
+* [Trailhead] ( https://trailhead.salesforce.com/en/content/learn/modules/lightning-web-components-basics/create-lightning-web-components?trail_id=build-lightning-web-components)
