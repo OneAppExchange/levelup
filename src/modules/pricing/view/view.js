@@ -3,7 +3,7 @@ import { LightningElement, api , track} from 'lwc';
 export default class View extends LightningElement {
     @api name = 'World';
     countClicks = 0;
-    /** @track **/ countLogs = []; 
+    @track  countLogs = []; 
 
     handleChange(event) {
         console.log('handle Change' );
@@ -39,8 +39,8 @@ export default class View extends LightningElement {
     
     get reverseName() {
         console.log('Reverse Property with value: ' + this.name ); 
-        //console.log('Reverse Property with Count Clicks: ' + this.countLogs ); 
-        //console.log('Reverse Property with Count Clicks: ' + this.countClicks ); 
+        console.log('Reverse Property with Count Clicks: ' + this.countLogs ); 
+        console.log('Reverse Property with Count Clicks: ' + this.countClicks ); 
         return this.name.split("").reverse().join("");
     }    
     
