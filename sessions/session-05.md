@@ -16,6 +16,7 @@ touch item/item.js
 Lets split and add some logic to our Log Item
 
 
+item.js
 ````
 import { LightningElement, api} from 'lwc';
 
@@ -32,6 +33,7 @@ export default class Item extends LightningElement {
 }
 ````
 
+item.html
 ````
 <template>
     <li>
@@ -40,6 +42,7 @@ export default class Item extends LightningElement {
 </template>
 ````
 
+view.html
 ````
   <ul>
       <template for:each={countLogs} for:item="log">
@@ -48,11 +51,91 @@ export default class Item extends LightningElement {
     </ul>
 ````
 
-This looks tightly couple solution, so let's continue defining more components with a more clear resposanbility. What is now we create a container
+Let's now move some logic to an utility. Go to modules folder and create a list component
+
+````
+mkdir list
+mkdir -p list/__tests__
+mkdir -p list/__stories__
+touch list/list.html
+touch list/list.js
+````
 
 
+list.js
+````
+import { LightningElement, api , track} from 'lwc';
 
+export default class List extends LightningElement {
 
+    handleSlotChange( event ) {
+        console.log(event)
+    }
+}
+````
+
+list.html
+````
+<template>
+    <div class="header">
+        <slot name="header">Header</slot>    
+    </div>
+    <div class="body">
+        <slot onslotchange={handleSlotChange}></slot>
+    </div>
+    <div class="footer">
+        <slot name="footer">Footer</slot>    
+    </div>
+</template>
+````
+
+list.css
+````
+.header {
+    background-color: aqua;
+    font-size: large;
+    text-align: center;
+    padding: 3px;
+}
+
+.body {
+    background-color:bisque;    
+}
+
+.footer {
+    background-color: aqua;
+    text-align: center;
+    padding: 3px;
+}
+````
+
+item.html
+````
+<template>
+    <p>
+       <b>Date:</b> {formatDate} 
+    </p>
+    <p>
+        <b>Time:</b> {formatTime}
+    </p>        
+</template>
+````
+
+view.html
+````
+   <utils-list>
+            <div slot="header">
+                New Header total clicks {countClicks}
+            </div>    
+            <template for:each={countLogs} for:item="log">
+                <pricing-item key={log.clickNum} time={log.time}></pricing-item>
+            </template>    
+            <div slot="footer">
+                <lightning-button label="Add" onclick={handleButton}></lightning-button>
+            </div>    
+    </utils-list>    
+
+````
 
 ## Resource
 * [Slots in Web Comoponents Spanish] (https://lenguajejs.com/webcomponents/nativos/slots/) 
@@ -60,3 +143,4 @@ This looks tightly couple solution, so let's continue defining more components w
 * [Composition Reference] (https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.create_components_compose_intro)
 * [Composition Guide] (https://lwc.dev/guide/composition)
 * [Composition Recipes] (https://recipes.lwc.dev/#composition)
+* [Trailhead using composition] (https://trailhead.salesforce.com/en/content/learn/modules/lightning-web-components-basics/handle-events-in-lightning-web-components?trail_id=build-lightning-web-components)
