@@ -19,7 +19,7 @@ Lets split and add some logic to our Log Item
 ````
 import { LightningElement, api} from 'lwc';
 
-export default class View extends LightningElement {
+export default class Item extends LightningElement {
     @api time = new Date();
  
     get formatDate( ){
