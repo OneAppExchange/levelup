@@ -6,14 +6,23 @@
         {reverseName}
     </div>
 
-    <template for:each={countLogs} for:item="log">
-        <li key={log.clickNum}>
-          {log.time}
-        </li>
-    </template>
+    <lightning-button label="toogle" onclick={handleToogleDates}></lightning-button>
+
+    <utils-list>
+            <div slot="header">
+                New Header total clicks {countClicks}
+            </div>    
+            <template for:each={countLogs} for:item="log" for:index="index">
+                <div key={log.clickNum}>
+                    <pricing-item time={log.time}></pricing-item>
+                    <lightning-button data-index={index} label="toogle" onclick={handleToogleDate}></lightning-button>
+                </div>
+            </template>    
+            <div slot="footer">
+                <lightning-button label="Add" onclick={handleButton}></lightning-button>
+            </div>    
+    </utils-list>    
 
         
-    <lightning-button label="Button" onclick={handleButton}></lightning-button>
-
     <lightning-input label="Name" value={name} onchange={handleChange}></lightning-input>
 </template>

@@ -2,8 +2,22 @@ import { LightningElement, api , track} from 'lwc';
 
 export default class View extends LightningElement {
     @api name = 'World';
-    countClicks = 0;
+    @api countClicks = 0;
     @track  countLogs = []; 
+
+
+    handleToogleDates() {
+        const items = this.template.querySelectorAll('pricing-item');
+        items.forEach( item => {
+            item.toogleDate();
+        })
+    }
+
+    handleToogleDate(event) {
+        const index = event.target.dataset.index;
+        const items = this.template.querySelectorAll('pricing-item');
+        items[index].toogleDate();
+    }
 
     handleChange(event) {
         console.log('handle Change' );
