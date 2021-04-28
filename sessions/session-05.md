@@ -209,9 +209,9 @@ Notice that in the html we added a custom attribute data-index and we set the in
 
 
 ## Resource
-* [Slots in Web Comoponents Spanish] (https://lenguajejs.com/webcomponents/nativos/slots/) 
-* [Templates & Slots] (https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots)
-* [Composition Reference] (https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.create_components_compose_intro)
-* [Composition Guide] (https://lwc.dev/guide/composition)
-* [Composition Recipes] (https://recipes.lwc.dev/#composition)
-* [Trailhead using composition] (https://trailhead.salesforce.com/en/content/learn/modules/lightning-web-components-basics/handle-events-in-lightning-web-components?trail_id=build-lightning-web-components)
+* [Slots in Web Comoponents Spanish](https://lenguajejs.com/webcomponents/nativos/slots/) 
+* [Templates & Slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots)
+* [Composition Reference](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.create_components_compose_intro)
+* [Composition Guide](https://lwc.dev/guide/composition)
+* [Composition Recipes](https://recipes.lwc.dev/#composition)
+* [Trailhead using composition](https://trailhead.salesforce.com/en/content/learn/modules/lightning-web-components-basics/handle-events-in-lightning-web-components?trail_id=build-lightning-web-components)
