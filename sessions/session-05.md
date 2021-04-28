@@ -145,7 +145,7 @@ view.html
 ````
 
 ### Calling methods on Child components
-To see more information [go to guide] (https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.create_javascript_methods).
+To see more information [go to guide](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.create_javascript_methods).
 
 So the first thing is to add some logic in the child, in our case let's suppose that we add some method to hide the date
 
@@ -159,34 +159,38 @@ item.js
     }
 ````
 
+item.html
 `````
     <template if:true={showDate}>
         <p>
            <b>Date:</b> {formatDate} 
         </p>
     </template>
-````
+`````
 
 And in our View component we will add a button Show/Hide that will trigger a handler, who will call the childs methods
 
 view.html
-````
+
+`````
     <lightning-button label="toogle" onclick={handleToogleDates}></lightning-button>
-````
+`````
 
 view.js
-````
+
+`````
     handleToogleDates() {
         const items = this.template.querySelectorAll('pricing-item');
         items.forEach( item => {
             item.toogleDate();
         })
     }
-````
+`````
 
 Supposed we like the toogle but at for each item, so we will need to call a toogle handler sending the item reference. Here a possible solution to that problem
 
 on the html side we nee to add a button, but we need to put it inside a div, because we can't have two childs in the foreach
+
 ````
     <template for:each={countLogs} for:item="log" for:index="index">
         <div key={log.clickNum}>
@@ -209,6 +213,7 @@ Notice that in the html we added a custom attribute data-index and we set the in
 
 
 ## Resource
+
 * [Slots in Web Comoponents Spanish](https://lenguajejs.com/webcomponents/nativos/slots/) 
 * [Templates & Slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots)
 * [Composition Reference](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.create_components_compose_intro)
