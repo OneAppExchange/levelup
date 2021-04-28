@@ -53,6 +53,7 @@ For more examples [go to receipes] (https://recipes.lwc.dev/#parent)
 
 
 ## Resources
+* [Introduction to Events](https://developer.mozilla.org/en-US/docs/Learn/Javascript/Building_Blocks/events)
 * [Custom Events MDN] ( https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events )
 * [Trailhead DX of LWC Communication Patterns] (https://www.youtube.com/watch?v=kGKL1sIDIho)
 * [Events Guide] (https://lwc.dev/guide/events#configure-event-propagation)
