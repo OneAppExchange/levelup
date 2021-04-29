@@ -15,7 +15,7 @@
             <template for:each={countLogs} for:item="log" for:index="index">
                 <div key={log.clickNum}>
                     <pricing-item time={log.time}></pricing-item>
-                    <lightning-button data-index={index} label="toogle" onclick={handleToogleDate}></lightning-button>
+                    <lightning-button data-index={index} label="toogle" ></lightning-button>
                 </div>
             </template>    
             <div slot="footer">
