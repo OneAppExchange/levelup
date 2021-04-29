@@ -78,6 +78,9 @@ Sa11y give us the possibility to assert the following type of expressions:
 expect(element).toBeAccessible()
 `````
 
+To read more [visit blog](https://developer.salesforce.com/blogs/2020/10/automated-accessibility-testing-with-sa11y.html).
+
+
 ## Storybook
 Storybook is a great tool for documenting and doing manual testing of components in an isolated way. Is very useful for Shared Libraries of components.
 Another benefit of using Storybooks is that designers can use it as a sandbox where they can play with components before they are integrated to the application, so is good to rapid prototyping 
