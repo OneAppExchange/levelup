@@ -67,6 +67,8 @@ For more examples [go to receipes](https://recipes.lwc.dev/#child) or check the 
 
 ### Api Property
 
+Notice is read only
+
 ### Api Function
 
 ### Api Getter Setter
