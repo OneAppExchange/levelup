@@ -1,2 +1,2 @@
-# Session 8: State Management
+# Session 8: Wired 
 
