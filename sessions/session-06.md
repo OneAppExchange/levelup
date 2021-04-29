@@ -39,9 +39,9 @@ and in the view.js we need to code a handler
 ````
 
 You can also see a recipe example [click here live](https://recipes.lwc.dev/#child):
-* [child](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/paginator)
+* [Child](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/paginator)
 
-paginator.js
+*paginator.js*
 ````
     handlePrevious() {
         this.dispatchEvent(new CustomEvent('previous'));
@@ -52,7 +52,7 @@ paginator.js
     }
 ````
 
-* [parent](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/eventSimple)
+* [Parent](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/eventSimple)
 
 eventSimple.html
 ````
@@ -201,7 +201,19 @@ Notice that properties allows only one direction of changes. To read more you ca
 
 You can also see a recipe example:
 * [parent](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/apiProperty)
+
+apiProperty.html
+````
+    <recipe-chart-bar percentage={percentage}></recipe-chart-bar>
+````
+
 * [child](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/chartBar)
+
+chartBar.js
+````
+    @api percentage;
+````
+
 
 ### Api Function
 In this case the parent will communicate with the child calling a method. To read more you can go to [guide](https://lwc.dev/guide/composition#call-a-method-on-a-child-component).
@@ -233,7 +245,24 @@ item.js (child)
 
 You can also see a recipe example:
 * [parent](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/apiFunction)
+
+apiFunction.html
+````
+    <ui-button label="Refresh Time" onclick={handleRefresh}></ui-button>
+    <recipe-clock></recipe-clock>
+````
+apiFunction.js
+````
+        this.template.querySelector('recipe-clock').refresh();
+````
+
 * [child](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/clock)
+
+````
+ @api refresh() {
+      this.timestamp = new Date().toISOString();
+  }
+````
 
 ### Api Getter Setter
 In this case the parent will communicate with the child using a getter and setter.
@@ -279,9 +308,24 @@ item.js (child)
 You can also see a recipe example:
 * [parent](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/apiSetterGetter)
 
+apiSetterGetter.html
+````
+  <recipe-todo-list todos={todos}></recipe-todo-list>
+````
 
 * [child](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/todoList)
 
+todoList.js
+````
+@api
+    get todos() {
+        return this._todos;
+    }
+    set todos(value) {
+        this._todos = value;
+        this.filterTodos();
+    }
+````
 
 ### Communication between unrelated components 
 Communication between unrelated components needs to go across the DOM. 
