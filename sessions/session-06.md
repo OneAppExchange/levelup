@@ -60,7 +60,7 @@ To do something more usefull we can try to change the button label from show and
 
 
 
-For more examples [go to receipes] (https://recipes.lwc.dev/#child) or check the [trailhead](https://trailhead.salesforce.com/en/content/learn/modules/lightning-web-components-basics/handle-events-in-lightning-web-components?trail_id=build-lightning-web-components).
+For more examples [go to receipes](https://recipes.lwc.dev/#child) or check the [trailhead](https://trailhead.salesforce.com/en/content/learn/modules/lightning-web-components-basics/handle-events-in-lightning-web-components?trail_id=build-lightning-web-components).
 
 ### Communication between Parent to Child
 
@@ -73,16 +73,16 @@ For more examples [go to receipes] (https://recipes.lwc.dev/#child) or check the
 
 
 
-For more examples [go to receipes] (https://recipes.lwc.dev/#parent)
+For more examples [go to receipes](https://recipes.lwc.dev/#parent)
 
 ### Communication between unrelated components
 
 
 ## Resources
 * [Introduction to Events](https://developer.mozilla.org/en-US/docs/Learn/Javascript/Building_Blocks/events)
-* [Custom Events MDN] ( https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events )
-* [Trailhead DX of LWC Communication Patterns] (https://www.youtube.com/watch?v=kGKL1sIDIho)
-* [Events Guide] (https://lwc.dev/guide/events#configure-event-propagation)
-* [Communication with Events] (https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.events)
-* [Pluralsight] ( https://app.pluralsight.com/library/courses/communicate-between-salesforce-lightning-web-components/table-of-contents)
+* [Custom Events MDN](https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events)
+* [Trailhead DX of LWC Communication Patterns](https://www.youtube.com/watch?v=kGKL1sIDIho)
+* [Events Guide](https://lwc.dev/guide/events#configure-event-propagation)
+* [Communication with Events](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.events)
+* [Pluralsight](https://app.pluralsight.com/library/courses/communicate-between-salesforce-lightning-web-components/table-of-contents)
 * [Trailhead](https://trailhead.salesforce.com/en/content/learn/modules/lightning-web-components-basics/handle-events-in-lightning-web-components?trail_id=build-lightning-web-components)
