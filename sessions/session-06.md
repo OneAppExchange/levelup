@@ -38,13 +38,30 @@ and in the view.js we need to code a handler
     }
 ````
 
-You can also see a recipe example:
-* [parent](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/eventSimple)
+You can also see a recipe example [click here live](https://recipes.lwc.dev/#child):
 * [child](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/paginator)
 
+paginator.js
+````
+    handlePrevious() {
+        this.dispatchEvent(new CustomEvent('previous'));
+    }
+
+    handleNext() {
+        this.dispatchEvent(new CustomEvent('next'));
+    }
+````
+
+* [parent](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/eventSimple)
+
+eventSimple.html
+````
+<recipe-paginator onprevious={handlePrevious} onnext={handleNext} ></recipe-paginator>
+````
 
 #### Sending data in the event 
-We can send a second parameter. There is warning in this parameter, if the data isn't primitive goes by reference, so in that case is need we recommend to clone before sending, to avoid undesirable behaviours
+Custom Event inherits from Event ( read more in  [MDN Custom Event](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent)
+We can send in the second parameter the detail argument. There is warning in this, if the data isn't primitive goes by reference, so in that case is need we recommend to clone before sending, to avoid undesirable behaviours
 
 replace in the item.js:9
 ````
@@ -64,18 +81,100 @@ in the view.js
 To do something more usefull we can try to change the button label from show and hide.
 
 
-
-You can also see a recipe example:
-* [parent](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/eventWithData)
+You can also see a recipe example [click here live](https://recipes.lwc.dev/#child):
 * [child](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/contactListItem)
 
-### Event Bubbling
+contactListItem.js 
+````
+   handleClick(event) {
+        // 1. Prevent default behavior of anchor tag click which is to navigate to the href url
+        event.preventDefault();
+        // 2. Read about event best practices at http://lwc.dev/guide/events#pass-data-in-events
+        const selectEvent = new CustomEvent('select', {
+            detail: this.contact.Id
+        });
+        // 3. Fire the custom event
+        this.dispatchEvent(selectEvent);
+    }
+````
+* [parent](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/eventWithData)
 
-You can also see a recipe example:
-* [parent](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/eventBubbling)
+eventWithData.html
+````
+<recipe-contact-list-item key={contact.Id} contact={contact} onselect={handleSelect} ></recipe-contact-list-item>
+````
+
+eventWithData.js
+````
+handleSelect(event) {
+    const contactId = event.detail;
+    this.selectedContact = this.contacts.data.find(
+        (contact) => contact.Id === contactId
+    );
+}
+````
+
+
+### Event Bubbling
+If we add bubbles: true, the event will go up until some parent element handle it. So let's do that.
+
+If an event bubbles up and crosses the shadow boundary, to hide the internal details of the component that dispatched the event, some property values change to match the scope of the listener. See [Event Retargeting](https://lwc.dev/guide/events#get-an-event-target).
+
+
+item.js
+````
+  this.dispatchEvent( new CustomEvent('toogle', { bubbles: true }) );
+````
+
+view.html (move the handleToogleInTheParent to the a new div 
+````
+    <div ontoogle={handleToogleInTheParent}>
+        <utils-list>
+          ...
+        </utils-list>
+    </div>
+````
+
+in the view.js we change the log, now we access the data via target (points to the lwc component that trigger the event)
+````
+    console.log('handleToogleInTheParent' + event.target.showDate);
+````
+
+You can also see a recipe example [click here live](https://recipes.lwc.dev/#child):
 * [child](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/contactListItemBubbling)
 
+contactListItemBubbling.js
+````
+ handleSelect(event) {
+        // 1. Prevent default behavior of anchor tag click which is to navigate to the href url
+        event.preventDefault();
+        // 2. Create a custom event that bubbles. Read about event best practices at https://lwc.dev/guide/events#configure-event-propagation
+        const selectEvent = new CustomEvent('contactselect', {
+            bubbles: true
+        });
+        // 3. Fire the custom event
+        this.dispatchEvent(selectEvent);
+    }
+````
 
+* [parent](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/eventBubbling)
+
+eventBubbling.html (notice that oncontactselect is on the div)
+````
+<div class="contact-list" oncontactselect={handleContactSelect}>
+    <template for:each={contacts.data} for:item="contact">
+        <recipe-contact-list-item-bubbling key={contact.Id} contact={contact} ></recipe-contact-list-item-bubbling>
+    </template>
+</div>
+````
+
+eventBubbling.js (notice that is using target.contact )
+````
+   handleContactSelect(event) {
+        this.selectedContact = event.target.contact;
+    }
+````
+    
 For more examples go to [trailhead](https://trailhead.salesforce.com/en/content/learn/modules/lightning-web-components-basics/handle-events-in-lightning-web-components?trail_id=build-lightning-web-components).
 
 ### Communication between Parent to Child
@@ -179,14 +278,23 @@ item.js (child)
 
 You can also see a recipe example:
 * [parent](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/apiSetterGetter)
+
+
 * [child](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/todoList)
 
 
-### Communication between unrelated components
-Communication between unrelated components needs to go across the DOM. In the past there was a pubsub library, but now we can use the LMS (Ligthning Messaging Service)
+### Communication between unrelated components 
+Communication between unrelated components needs to go across the DOM. 
+
+### Ligthning Messaging Service for Salesforce LWC
+If we are doing LWC on Salesforce we can use the LMS (Ligthning Messaging Service). 
 
 There are three steps first is to create a channel, then publish (who emmit the communication) and finally subscribe (who recibes that communication). Is an event bus pattern.
 
+Read more in the [LMS Reference](https://developer.salesforce.com/docs/component-library/bundle/lightning-message-service)
+
+### Pubsub Library
+Before LMS the alternative was using the pubsub library. For LWC OSS we can try the [pubsub package](https://www.npmjs.com/package/pubsub-js)
 
 
 ## Resources
