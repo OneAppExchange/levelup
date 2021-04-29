@@ -1,4 +1,4 @@
-# Session 6
+# Session 6: Events
 In this session we will cover Custom Events and how components can communicate between each other
 
 ## Coding
