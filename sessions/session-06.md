@@ -9,6 +9,7 @@ In a simple way we say tha properties goes down while events goes up. So we will
 
 We will use custom events, that is the standard way to create our own events, and the parent of our component can listen it.
 
+#### Without sending data
 We can send data in the event, in case we dont want, we can create event with:
 
 ````
@@ -37,14 +38,39 @@ and in the view.js we need to code a handler
     }
 ````
 
-To do something more usefull we can try to change the button label from show and hide.
+#### Sending data in the event 
+We can send a second parameter. There is warning in this parameter, if the data isn't primitive goes by reference, so in that case is need we recommend to clone before sending, to avoid undesirable behaviours
 
+replace in the item.js:9
+````
+    @api toogleDate() {
+        this.showDate = !this.showDate;
+        this.dispatchEvent( new CustomEvent('toogle', { detail: { showDate: this.showDate} }) );
+    }
+````
+
+in the view.js
+````
+    handleToogleInTheParent() {
+        console.log('handleToogleInTheParent' + event.detail.showDate);
+    }
+````
+
+To do something more usefull we can try to change the button label from show and hide.
 
 
 
 For more examples [go to receipes] (https://recipes.lwc.dev/#child) or check the [trailhead](https://trailhead.salesforce.com/en/content/learn/modules/lightning-web-components-basics/handle-events-in-lightning-web-components?trail_id=build-lightning-web-components).
 
 ### Communication between Parent to Child
+
+
+### Api Property
+
+### Api Function
+
+### Api Getter Setter
+
 
 
 For more examples [go to receipes] (https://recipes.lwc.dev/#parent)
