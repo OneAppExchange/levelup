@@ -1,2 +1,2 @@
-# Session 8: Error Handling
+# Session 8: State Management
 
