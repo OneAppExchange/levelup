@@ -1,4 +1,4 @@
-# Session 5
+# Session 5: Composition
 This session we will deep dive in the composition.
 
 ## Coding
