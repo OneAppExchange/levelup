@@ -1,4 +1,4 @@
-# Session 2
+# Session 2: Public and private Properties
 Now what we will do is to add the avility to create a lwc but changing the name. 
 
 The goal will be understand relation between properties and html attributes
