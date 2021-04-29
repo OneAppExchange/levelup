@@ -6,6 +6,7 @@ export default class viewItem extends LightningElement {
 
     @api toogleDate() {
         this.showDate = !this.showDate;
+        this.dispatchEvent( new CustomEvent('toogle') );
     }
 
     get formatDate( ){

@@ -12,11 +12,6 @@ export default class View extends LightningElement {
             item.toogleDate();
         })
     }
-    handleToogleDate(event) {
-        const index = event.target.dataset.index;
-        const items = this.template.querySelectorAll('pricing-item');
-        items[index].toogleDate();
-    }
 
     handleToogleInTheParent() {
         console.log('handleToogleInTheParent');
