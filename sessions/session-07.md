@@ -28,14 +28,16 @@ export default class WireExample extends LightningElement {
 }
 ````
 
-* adapterId: This is the adapterId that we imported from adapterModule. We will used apdater modules or we may need to create our own modules using the WireAdapter interface.
-* adapterConfig: This is optional, and is the configuration that the adapterId will recieve to fetch the data. So in case we need to send parameters will be here as an object. { parameterName: value, parameterName: '$property' }. '$property' makes the reactivity, every time that property is updated
-* fieldOrFunction: This can be a Field or a Function. 
-  * field: In this case this property is private (remember that we can't used @api decorator if we used @wired). If the wired adapter was successfully, the result stream  will be set into a hardcoded field called data in the propperty, and if wasn't successully will set the error into a hardcoded error field inside the property.
-  * function: As the field this method will be private, and will recieve the object with data or error, and we can code how to process that.
+* **adapterId**: This is the adapterId that we imported from adapterModule. We will used apdater modules or we may need to create our own modules using the WireAdapter interface.
+* **adapterConfig**: This is optional, and is the configuration that the adapterId will recieve to fetch the data. So in case we need to send parameters will be here as an object. { parameterName: value, parameterName: '$property' }. '$property' makes the reactivity, every time that property is updated
+* **fieldOrFunction**: This can be a Field or a Function. 
+  * **field**: In this case this **property** is private (remember that we can't used @api decorator if we used @wired). If the wired adapter was successfully, the result stream  will be set into a hardcoded field called data in the propperty, and if wasn't successully will set the error into a hardcoded error field inside the property.
+  * **function**: This **method** also will be private, and will recieve the object with data or error, and we can code how to process that.
 
 ## Coding
 
+````
+````
 
 
 ## Reference
