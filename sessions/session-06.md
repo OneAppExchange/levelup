@@ -344,16 +344,13 @@ There are three steps first is to create a channel, then publish (who emmit the 
 
 Read more in the [LMS Reference](https://developer.salesforce.com/docs/component-library/bundle/lightning-message-service)
 
-### Pubsub Library
-Before LMS the alternative was using the pubsub library. 
+### Pubsub Class
+Before LMS the alternative was using the pubsub component. You can see the [github pubsub repo](https://github.com/developerforce/pubsub), today is going to be deprecated.
 
-For LWC OSS we can try the [github pubsub repo](https://github.com/developerforce/pubsub)
-
-Here a great article [click here](https://www.sfdcpanther.com/pub-sub-in-lightning-web-component/)
-
-To read more visit [reference](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.events_pubsub)
+Here a great article [click here](https://www.sfdcpanther.com/pub-sub-in-lightning-web-component/). Where explains in detail and have the pubsub code ready to copy and paste in our project. [Click here to see the code](https://gist.githubusercontent.com/amitastreait/025825355c8c627aea96676351cbbbf8/raw/af90fcdd3081cc26600306ea232c3f7732f0769d/pubsub.js)
 
 
+To read more visit the [reference](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.events_pubsub)
 
 ## Resources
 * [Introduction to Events](https://developer.mozilla.org/en-US/docs/Learn/Javascript/Building_Blocks/events)
