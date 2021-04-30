@@ -10,7 +10,29 @@ If we want to use ligthning components we need to install them. [npm link] (http
 
 ## ESLint
 
+````
+yarn add -D eslint
+yarn add -D @salesforce/eslint-config-lwc
+````
+
+[VS Code Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
 ## Prettier
+This package is already part of the LWC, but explicitily we can install it as dev dependency.
+
+````
+yarn add -D prettier
+````
+
+Now we can add prettier to eslint
+
+````
+yarn add -D eslint-config-prettier
+yarn add -D eslint-plugin-prettier
+````
+
+[VS Code Extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
 
 ## Husky
 
@@ -37,7 +59,7 @@ In order to test if our components are accesible, we have a sa11y jest plugin.
 Let's install it, going to root folder 
 
 ````
-yarn add @sa11y/jest -D
+yarn add -D @sa11y/jest
 ````
 
 There is another things to do, we need to change Jest configuration.  
@@ -141,8 +163,9 @@ module.exports = {
   }
 };
 
-
 ````
+
+[Read more](https://github.com/LWC-Essentials/storybook)
 
 ## Webpack Bundle Analyzer
 
