@@ -31,6 +31,15 @@ yarn add -D eslint-config-prettier
 yarn add -D eslint-plugin-prettier
 ````
 
+.eslint.json
+````
+{
+    "extends": ["@salesforce/eslint-config-lwc/recommended", "plugin:prettier/recommended"],
+    ...
+}
+````
+
+
 [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
 
