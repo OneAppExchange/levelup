@@ -1,11 +1,17 @@
-# Session 6: Events
-In this session we will cover Custom Events and how components can communicate between each other
+# Session 6: Components Communication
+
+In this session we will how components can communicate between each other
+
+
+![Communication](resources/communication.png)
 
 ## Coding
 
 ### Communication between Child to Parent
 
 In a simple way we say tha properties goes down while events goes up. So we will see how a child can send information to the parent using events. In html we are use to events, but is good to remember that in a nested structure the event life cycle has capture phase from top to bottom, then a target phase when the event reaches the element that fires the event, and finally a bubling phase where the event goes up so it can be handle by any parent of the element. 
+
+![Event Cycle](resources/event-cycle.png)
 
 We will use custom events, that is the standard way to create our own events, and the parent of our component can listen it.
 
