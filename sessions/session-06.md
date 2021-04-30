@@ -115,7 +115,7 @@ handleSelect(event) {
 ````
 
 
-### Event Bubbling
+#### Event Bubbling
 If we add bubbles: true, the event will go up until some parent element handle it. So let's do that.
 
 If an event bubbles up and crosses the shadow boundary, to hide the internal details of the component that dispatched the event, some property values change to match the scope of the listener. See [Event Retargeting](https://lwc.dev/guide/events#get-an-event-target).
@@ -174,8 +174,15 @@ eventBubbling.js (notice that is using target.contact )
         this.selectedContact = event.target.contact;
     }
 ````
-    
+
+#### Events across the Shadow DOM
+The event wont bublle outside our component unless we tell to do it. For this we have another options in the second argument that is composed. If we set this value as true will bubble up to the document root
+
+For more about event propagation [visit reference](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.events_propagation)
+
+
 For more examples go to [trailhead](https://trailhead.salesforce.com/en/content/learn/modules/lightning-web-components-basics/handle-events-in-lightning-web-components?trail_id=build-lightning-web-components).
+
 
 ### Communication between Parent to Child
 As we said Child to parent communication used events, and Parent to Child use public propeties. So remember that for creating public properties or methods we use the @api decorator ( [Session 2](https://github.com/sebastianclaros/levelup-lwc/blob/main/sessions/session-02.md) ).
