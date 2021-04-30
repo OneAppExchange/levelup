@@ -347,7 +347,37 @@ Read more in the [LMS Reference](https://developer.salesforce.com/docs/component
 ### Pubsub Class
 Before LMS the alternative was using the pubsub component. You can see the [github pubsub repo](https://github.com/developerforce/pubsub), today is going to be deprecated.
 
-Here a great article [click here](https://www.sfdcpanther.com/pub-sub-in-lightning-web-component/). Where explains in detail and have the pubsub code ready to copy and paste in our project. [Click here to see the code](https://gist.githubusercontent.com/amitastreait/025825355c8c627aea96676351cbbbf8/raw/af90fcdd3081cc26600306ea232c3f7732f0769d/pubsub.js)
+Here a great article [click here](https://www.sfdcpanther.com/pub-sub-in-lightning-web-component/). Where explains in detail and have the pubsub code ready to copy and paste in our project. [Click here to see the pubsub code](https://gist.githubusercontent.com/amitastreait/025825355c8c627aea96676351cbbbf8/raw/af90fcdd3081cc26600306ea232c3f7732f0769d/pubsub.js)
+
+
+publisher
+````
+    handleClick(){
+        window.console.log('Event Firing..... ');
+        let message = {
+            "message" : 'Hello PubSub'
+        }
+        pubsub.fire('simplevt', message );
+        window.console.log('Event Fired ');
+    }
+````
+
+subscriber
+````
+  message;
+    connectedCallback(){
+        this.register();
+    }
+    register(){
+        window.console.log('event registered ');
+        pubsub.register('simplevt', this.handleEvent.bind(this));
+    }
+    handleEvent(messageFromEvt){
+        window.console.log('event handled ',messageFromEvt);
+        this.message = messageFromEvt ? JSON.stringify(messageFromEvt, null, '\t') : 'no message payload';
+    }
+}
+````
 
 
 To read more visit the [reference](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.events_pubsub)
