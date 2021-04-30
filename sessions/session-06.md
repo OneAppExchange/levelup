@@ -2,7 +2,6 @@
 
 In this session we will how components can communicate between each other
 
-
 ![Communication](resources/communication.png)
 
 ## Coding
@@ -214,10 +213,11 @@ item.js (child)
     @api time = new Date();
 ````
 
->[!Notice]
->Notice that properties allows only one direction of changes. To read more you can [go to guide](https://lwc.dev/guide/composition#objects-passed-to-components-are-read-only). 
->And to understand deeper Data Flow [visit reference](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.create_components_data_flow)
-
+---
+**Notice**
+Notice that properties allows only one direction of changes. To read more you can [go to guide](https://lwc.dev/guide/composition#objects-passed-to-components-are-read-only). 
+And to understand deeper Data Flow [visit reference](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.create_components_data_flow)
+---
 
 You can also see a recipe example:
 * [parent](https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/recipe/apiProperty)
