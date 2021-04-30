@@ -9,6 +9,8 @@ In a simple way we say tha properties goes down while events goes up. So we will
 
 We will use custom events, that is the standard way to create our own events, and the parent of our component can listen it.
 
+![Child to Parent](resources/child-to-parent.png)
+
 #### Simple
 We can send data in the event, in case we dont want, we can create event with:
 
@@ -186,6 +188,9 @@ For more examples go to [trailhead](https://trailhead.salesforce.com/en/content/
 
 ### Communication between Parent to Child
 As we said Child to parent communication used events, and Parent to Child use public propeties. So remember that for creating public properties or methods we use the @api decorator ( [Session 2](https://github.com/sebastianclaros/levelup-lwc/blob/main/sessions/session-02.md) ).
+
+![Parent to Child](./resources/parent-to-child.png)
+
 
 Let's see 3 different ways
 
