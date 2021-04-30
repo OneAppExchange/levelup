@@ -44,3 +44,6 @@ export default class WireExample extends LightningElement {
 * [Wired Reference](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.data_wire_service_about)
 * [Wired guide](https://lwc.dev/guide/wire_adapter)
 * [Unit Test](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/unit_testing_using_wire_utility)
+* [RFC](https://rfcs.lwc.dev/rfcs/lwc/0103-wire-adapters)
+* [Blog Wired part 1: Consume Data](https://blog.riand.com/2020/01/lwc-wire-adapters-1-consuming-data.html)
+* [Blog Wired part 2: Produced Streams](https://blog.riand.com/2020/01/lwc-wire-adapters-2-producing-data.html)
