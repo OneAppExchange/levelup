@@ -6,6 +6,14 @@ export default class View extends LightningElement {
     @track  countLogs = []; 
 
 
+    handleShowHideDates(event) {
+        const items = this.template.querySelectorAll('pricing-item');
+        console.log(event.target.checked);
+
+        items.forEach( item => {
+            item.showDate = event.target.checked;
+        })
+    }
     handleToogleDates() {
         const items = this.template.querySelectorAll('pricing-item');
         items.forEach( item => {
@@ -13,10 +21,15 @@ export default class View extends LightningElement {
         })
     }
 
-    handleToogleInTheParent() {
-        console.log('handleToogleInTheParent');
+    handleToogleInTheParent(event) {
+        console.log('handleToogleInTheParent' + event.target.showDate);
     }
-
+    
+    handleToogleDate(event) {
+        const index = event.target.dataset.index;
+        const items = this.template.querySelectorAll('pricing-item');
+        items[index].toogleDate();
+    }
 
     handleChange(event) {
         console.log('handle Change' );

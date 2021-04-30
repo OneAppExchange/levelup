@@ -2,11 +2,20 @@ import { LightningElement, api} from 'lwc';
 
 export default class viewItem extends LightningElement {
     @api time = new Date();
-    showDate = true;
+    _showDate = true;
+
+    get showDate() {
+        return this._showDate;
+    }
+
+    @api set showDate( value ) {
+        this._showDate = value;
+        this.dispatchEvent( new CustomEvent('toogle', { bubbles: true }) );
+    }
 
     @api toogleDate() {
-        this.showDate = !this.showDate;
-        this.dispatchEvent( new CustomEvent('toogle') );
+        this._showDate = !this._showDate;
+        this.dispatchEvent( new CustomEvent('toogle', { detail: { showDate: this._showDate} }) );
     }
 
     get formatDate( ){
