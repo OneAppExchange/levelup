@@ -82,10 +82,10 @@ list.html
 ````
 <template>
     <div class="container">
-        <div class="search">
-            <lightning-input type="search" onchange={handleSearchKeyChange} label="Search Books" value={queryParams.q} ></lightning-input>
-        </div>
         <template if:true={books.data}>
+            <div class="search">
+                <lightning-input type="search" onchange={handleSearchKeyChange} label="Search Books" value={queryParams.q} ></lightning-input>
+            </div>
             <ul>
                 <template for:each={books.data.items} for:item="book">
                     <li key={book.id} class="search-results">
@@ -100,7 +100,7 @@ list.html
 
         </template>
         <template if:true={books.error}>
-            <div>{error}></div>
+            <div> Error: {books.error}></div>
         </template>
     </div>
 </template>
