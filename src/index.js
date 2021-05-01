@@ -1,7 +1,9 @@
 import '@lwc/synthetic-shadow';
 import { createElement } from 'lwc';
 import MyPricing from  'pricing/view';
+import MyBookList from  'books/list';
 
+customElements.define('books-list', MyBookList.CustomElementConstructor);
 customElements.define('pricing-view', MyPricing.CustomElementConstructor);
 
 

@@ -1,0 +1,24 @@
+<template>
+    <div class="container">
+        <div class="search">
+            <lightning-input
+                type="search"
+                onchange={handleSearchKeyChange}
+                label="Search Books"
+                value={searchKey}
+            ></lightning-input>
+        </div>
+        <template if:true={books.data}>
+            <ul>
+                <template for:each={books.data.items} for:item="book">
+                    <li key={book.id} class="search-results">
+                        {book.volumeInfo.title}
+                    </li>
+                </template>
+            </ul>
+        </template>
+        <template if:true={books.error}>
+            <div>{error}></div>
+        </template>
+    </div>
+</template>
