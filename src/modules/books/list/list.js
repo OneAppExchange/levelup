@@ -8,24 +8,33 @@ export default class List extends LightningElement {
         const fetchClient = new FetchClient('https://www.googleapis.com');
         setFetchClient(fetchClient);        
     }
-    @track variables = {
-        apiVersion: 'v1'
-    }
 
-    @track queryParams = {
-        q: 'Harry Potter',
-//        orderBy: '',
-        startIndex: 2       
-    }
+    @track queryParams = { q: 'Harry Potter', startIndex: 0 }
 
     @wire(useFetch, {
-        url: '/books/{apiVersion}/volumes',
-        variables: '$variables',
+        url: '/books/v1/volumes',
         queryParams: '$queryParams'
     }) books;
 
+    handlePreviousPage() {
+        const params = {... this.queryParams};
+        //if ( params.startIndex > 0 ) {
+            params.startIndex--;
+            this.queryParams = params;
+        //}
+    }
+
+    handleNextPage() {
+        const params = {... this.queryParams};
+        params.startIndex++;
+        this.queryParams = params;
+    }
 
     handleSearchKeyChange(event) {
-        this.queryParams.q = event.target.value;
+        const params = {... this.queryParams};
+        params.startIndex = 0;
+        params.q = event.target.value;
+        
+        this.queryParams = params;
     }
 }
