@@ -1,4 +1,4 @@
-# Session 7: Wired
+# Session 7: Wired Adapters
 
 So far our components were more ui with local logic and no relation with any service running in a server. 
 The goal of this session is to connect our components with services. 
