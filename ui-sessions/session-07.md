@@ -83,12 +83,7 @@ list.html
 <template>
     <div class="container">
         <div class="search">
-            <lightning-input
-                type="search"
-                onchange={handleSearchKeyChange}
-                label="Search Books"
-                value={searchKey}
-            ></lightning-input>
+            <lightning-input type="search" onchange={handleSearchKeyChange} label="Search Books" value={queryParams.q} ></lightning-input>
         </div>
         <template if:true={books.data}>
             <ul>
@@ -98,6 +93,11 @@ list.html
                     </li>
                 </template>
             </ul>
+            <div class="buttons">
+                <lightning-button onclick={handlePreviousPage} label="Previous"></lightning-button>
+                <lightning-button onclick={handleNextPage} label="Next"></lightning-button>
+            </div>    
+
         </template>
         <template if:true={books.error}>
             <div>{error}></div>
@@ -119,24 +119,34 @@ export default class List extends LightningElement {
         const fetchClient = new FetchClient('https://www.googleapis.com');
         setFetchClient(fetchClient);        
     }
-    @track variables = {
-        apiVersion: 'v1'
-    }
 
-    @track queryParams = {
-        q: 'Harry Potter',
-        startIndex: 0        
-    }
+    @track queryParams = { q: 'Harry Potter', startIndex: 0 }
 
     @wire(useFetch, {
-        url: '/books/{apiVersion}/volumes',
-        variables: '$variables',
+        url: '/books/v1/volumes',
         queryParams: '$queryParams'
     }) books;
 
+    handlePreviousPage() {
+        const params = {... this.queryParams};
+        if ( params.startIndex > 0 ) {
+            params.startIndex--;
+            this.queryParams = params;
+        }
+    }
+
+    handleNextPage() {
+        const params = {... this.queryParams};
+        params.startIndex++;
+        this.queryParams = params;
+    }
 
     handleSearchKeyChange(event) {
-        this.queryParams.q = event.target.value;
+        const params = {... this.queryParams};
+        params.startIndex = 0;
+        params.q = event.target.value;
+        
+        this.queryParams = params;
     }
 }
 ````
