@@ -36,8 +36,152 @@ export default class WireExample extends LightningElement {
 
 ## Coding
 
+### Create a Wired Adapter
+In SF platform all the adapters are provided, and today we can't create our own adapters. But in LWC OSS we will need to create our apadters. 
+
+Create a wired adapter requires a deeper understaning than consuming, so lets copy and paste one from [github](https://github.com/LWC-Essentials/wire-adapters/tree/master/packages/fetch/src/fetch),. This example will create an adapter that uses the fetch library to access web data from a url.
+
+
+Let's go to src/modules/utils folder
+
 ````
+mkdir fetch
+mkdir -p fetch/__tests__
+cd fetch
+touch fetch.js
+curl -O https://raw.githubusercontent.com/LWC-Essentials/wire-adapters/master/packages/fetch/src/fetch/usefetch.ts
+curl -O https://raw.githubusercontent.com/LWC-Essentials/wire-adapters/master/packages/fetch/src/fetch/client.ts
+cd __tests__
+curl -O https://raw.githubusercontent.com/LWC-Essentials/wire-adapters/master/packages/fetch/src/fetch/__tests__/client.test.ts
 ````
+
+Let's export both modules
+
+fetch.js
+````
+export * from  './client';
+export * from './usefetch';
+````
+
+Read more about this adapter [here](https://github.com/LWC-Essentials/wire-adapters/tree/master/packages/fetch)
+
+### Use the Fetch Wired Adapter
+
+Let's go to src/modules/ folder and create a couple of componets
+````
+mkdir books
+mkdir -p books/list
+mkdir -p books/list/__tests__
+mkdir -p books/list/__stories__
+touch books/list/list.html
+touch books/list/list.js
+touch books/list/list.css
+````
+
+list.html
+````
+<template>
+    <div class="container">
+        <div class="search">
+            <lightning-input
+                type="search"
+                onchange={handleSearchKeyChange}
+                label="Search Books"
+                value={searchKey}
+            ></lightning-input>
+        </div>
+        <template if:true={books.data}>
+            <ul>
+                <template for:each={books.data.items} for:item="book">
+                    <li key={book.id} class="search-results">
+                        {book.volumeInfo.title}
+                    </li>
+                </template>
+            </ul>
+        </template>
+        <template if:true={books.error}>
+            <div>{error}></div>
+        </template>
+    </div>
+</template>
+````
+
+
+list.js
+````
+import { useFetch, FetchClient, setFetchClient } from 'utils/fetch';
+import { LightningElement, wire, track } from 'lwc';
+
+export default class List extends LightningElement {
+
+    constructor() {
+        super();
+        const fetchClient = new FetchClient('https://www.googleapis.com');
+        setFetchClient(fetchClient);        
+    }
+    @track variables = {
+        apiVersion: 'v1'
+    }
+
+    @track queryParams = {
+        q: 'Harry Potter',
+        startIndex: 0        
+    }
+
+    @wire(useFetch, {
+        url: '/books/{apiVersion}/volumes',
+        variables: '$variables',
+        queryParams: '$queryParams'
+    }) books;
+
+
+    handleSearchKeyChange(event) {
+        this.queryParams.q = event.target.value;
+    }
+}
+````
+
+list.css
+````
+.search-results {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    margin: 0;
+}
+
+.margin-vertical-small {
+    margin: 0 4 0 4;
+}
+
+a {
+    text-decoration: var(--text-decoration);
+    color: var(--color-text-link);
+}
+````
+
+## See in action
+
+If we want to see we will need to change our index.html and index.js
+
+Let's replace the pricing-view for books-list
+
+index.html
+```
+    <books-list ></books-list>
+```
+
+index.js
+```
+import MyBookList from  'books/list';
+
+customElements.define('books-list', MyBookList.CustomElementConstructor);
+```
 
 
 ## Reference
