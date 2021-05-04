@@ -185,6 +185,25 @@ eventBubbling.js (notice that is using target.contact )
 #### Events across the Shadow DOM
 The event wont bublle outside our component unless we tell to do it. For this we have another options in the second argument that is composed. If we set this value as true will bubble up to the document root
 
+````
+  this.dispatchEvent( new CustomEvent('toogle', { composed: true, bubbles: true  }));
+````
+
+In the index.html handling the event with ontoogle didnt work, may be because toogle is not standard (standard event types like click, keypress, etc worked). But what worked fine is handling using the eventlistener:
+
+````
+    <div id="top_element">
+        <pricing-view  name="team" count-clicks="1"></pricing-view>
+    </div>
+````
+
+````
+  document.getElementById('top_element').addEventListener( "toogle", (event) => {
+      console.log(event);
+  })
+````
+
+
 For more about event propagation [visit reference](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.events_propagation)
 
 
