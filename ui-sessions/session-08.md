@@ -21,7 +21,7 @@ try {
 
 } catch ( err ) { // err can be rename and is optional 
 
-} finally { // is an elegant way to block code that will be excute after try/catch
+} finally { // is an elegant way to block code that will be excute after try/catch no matter if there was an expection or not
 
 }
 ````
@@ -33,7 +33,7 @@ try {
 **Good practices:**
 * Avoid having a global try catch for all the code
 * Catch the errors that you expected. Avoid cacthing errors that you dont expect, this only produces "silent" bugs that are very hard to find.
-* 
+ 
 
 ### Error Object
 Javascript generates an Error object when an error occur with the following structure:
@@ -53,6 +53,7 @@ We can use the throw operator to fired our own errors. The syntax is the followi
 ````
 
 ### Throwing your own errors
+
 Supposed that we have an record object represented in a json string. The record object has id as required field, and we want to put that our code
 
 ````
@@ -61,9 +62,11 @@ try {
   if ( !record.id ) {
     throw new SyntaxError( 'Invalid record object, with id is required' ) ;
   }
-
 } catch (err) {
+
 }
+````
+
 
 ### Rethrowing errors
 
@@ -86,25 +89,118 @@ try {
 
 ### Custom Errors
 
-
+We can create our own Error object extending the standard Error. This is a good example for use inheritance, we will receieve the stack trace. 
+````
+class HttpError extends Error {
+    constructor( status = 500, statusText, body, ...params) {
+        super(...params)
+        this.status = status;
+        this.statusText = statusText;
+        this.body = body;
+    }
+}
+````
 To read more about try catch visit [Custom Errors](https://javascript.info/custom-errors)
-
-
-
 
 
 ### Global Catch
 
 
 To read more about try catch visit [Error handling, "try...catch"](https://javascript.info/try-catch#optional-catch-binding)
+
 ## Asynchronic Errors
 
 
+### Using try catch inside the callback function 
 
-## Error Callback
+````
+setTimeout(() => {
+    try {
+        //logic
+    } catch (e) {
+        //handle error
+    }
+}, 300)
+````
+
+### Wired
+Here we have to handle errors comming from the provisioning using error, and errors processing data with a try catch statement.
+````
+@wire(getContactList)
+wiredContacts({ error, data }) {
+    if (data) {
+        try {
+            //logic to handle result
+        } catch(e){
+            //error when handling result
+        }
+    } else if (error) {
+        //error with value provisioning
+    }
+}
+````
+
+### Promisses and imperative calls
+
+Using promises we can use catch to handle errors in the async function as well in the then block.
+
+````
+getContactList()
+    .then(result => {
+        //logic to handle result... dont need a try catch
+    })
+    .catch(error => {
+        //logic to handle errors
+    });
+````    
+
+### Using async await with try catch
+
+
+````
+;(async function() {
+    try {
+        await getContactList()
+        
+        // logic to handle result
+        
+    } catch (err) {
+        console.error(err) // we will make sense of that later
+    }
+})()
+
+````
+
+## Error Callback method
+
+The Error Callback method captures errors from all the descendent components in its tree. 
+
+Important things to see:
+* It only catches errors in the handlers assigned via the template. Any programmatically assigned event handlers won’t be caught. 
+* Once an error is caught, the framework unmounts the child component that threw the error from the DOM. 
+* It catches errors that occurs in the descendant components but *not itself*.
 
 
 ## Display and Logging Errors
+
+Good practices:
+* Display error near the point of failure
+* Toast for multiple errors or when a button is clicked 
+* Low level components and utils throws errors that high level component will handle
+* Create a Error display component that is reuse in the components
+
+
+[Reduce errors](https://github.com/trailheadapps/lwc-recipes/blob/main/force-app/main/default/lwc/ldsUtils/ldsUtils.js)
+
+## Logging Errors
+In a development enviroment we can use console.error, that will show also the stack in the console. Console error accepts multiple arguments
+
+````
+console.error(obj1 [, obj2, ..., objN]);
+console.error(msg [, subst1, ..., substN]);
+````
+
+In production console.error has no value, and we will need to use another mechanism to track this in a server and notify the dev team.
 
 ## Resources
 * [Best Practices article] (https://developer.salesforce.com/blogs/2020/08/error-handling-best-practices-for-lightning-web-components.html)
