@@ -350,6 +350,11 @@ todoList.js
     }
 ````
 
+### Communication between childs of the same parent
+
+We can use a combination of the two previous.
+
+
 ### Communication between unrelated components 
 Communication between unrelated components needs to go across the DOM. 
 
