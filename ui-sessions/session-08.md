@@ -203,6 +203,6 @@ console.error(msg [, subst1, ..., substN]);
 In production console.error has no value, and we will need to use another mechanism to track this in a server and notify the dev team.
 
 ## Resources
-* [Best Practices article] (https://developer.salesforce.com/blogs/2020/08/error-handling-best-practices-for-lightning-web-components.html)
+* [Best Practices article](https://developer.salesforce.com/blogs/2020/08/error-handling-best-practices-for-lightning-web-components.html)
 
 
