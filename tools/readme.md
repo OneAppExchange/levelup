@@ -9,8 +9,8 @@ Let's start looking for some usefull
 | Purpose                   | Tool                                                                                                                                |
 | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | Web Component  Framework  | [lwc](./lwc.md)                                                                                                                     |
-| Linter                    | [EsLint](./eslint.md)                                                                                                               |
-| Prettier                  | [Prettier](./prettier.md)                                                                                                           |
+| Linting                   | [EsLint](./eslint.md)                                                                                                               |
+| Syntax                    | [Prettier](./prettier.md)                                                                                                           |
 | Git Actions               | [Husky](./husky.md)                                                                                                                 |
 | Unit Testing              | [Jest](./jest.md)                                                                                                                   |
 | Component Documentation   | [Storybook](./storybook.md)                                                                                                         |
