@@ -8,7 +8,7 @@ Let's start looking for some usefull
 
 | Purpose                   | Tool                                                                                                                                |
 | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| Web Component  Framework  | [lwc](./lwc.md)                                                                                                                     |
+| Web Component  Framework  | [LWC](./lwc.md)                                                                                                                     |
 | Linting                   | [EsLint](./eslint.md)                                                                                                               |
 | Syntax                    | [Prettier](./prettier.md)                                                                                                           |
 | Git Actions               | [Husky](./husky.md)                                                                                                                 |
@@ -23,11 +23,8 @@ Let's start looking for some usefull
 
 
 ## To review
-
+* Zustand for State management
+* dotenv for Enviroment Variables
+* Typescript
+* Navigo for routing
 * immer
-* dotenv
-* stylelint-declaration-use-variable
-* messageformat
-* zustand
-* typescript
-* navigo
