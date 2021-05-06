@@ -16,35 +16,35 @@ $ touch .gitignore
 
 Edit the file with the following content
 ```
-  # Log files
-  logs
-  *.log
-  *-debug.log
-  *-error.log
+# Log files
+logs
+*.log
+*-debug.log
+*-error.log
 
-  # Standard lib folder
-  /lib
+# Standard lib folder
+/lib
 
-  # Standard dist folder
-  /dist
+# Standard dist folder
+/dist
 
-  # Tooling files
-  node_modules
+# Tooling files
+node_modules
 
-  # Temp directory
-  /tmp
+# Temp directory
+/tmp
 
-  # Jest coverage folder
-  /coverage
+# Jest coverage folder
+/coverage
 
-  # MacOS system files
-  .DS_Store
+# MacOS system files
+.DS_Store
 
-  # Windows system files
-  Thumbs.db
-  ehthumbs.db
-  [Dd]esktop.ini
-  $RECYCLE.BIN/
+# Windows system files
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
 ```
 
 ## Install LWC Runtime
