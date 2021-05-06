@@ -1,8 +1,8 @@
 module.exports = {
-    resources: [{ from: 'src/resources/', to: 'dist/resources/' },
+    resources: [{ from: 'src/resources/', to: 'server/dist/resources/' },
     {
         from: 'node_modules/@salesforce-ux/design-system/assets',
-        to: 'dist/SLDS'
+        to: 'server/dist/SLDS'
         }
    ]
  };
