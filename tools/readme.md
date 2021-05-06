@@ -9,15 +9,12 @@ Let's start looking for some usefull
 | Purpose                   | Tool                                                                                                                                |
 | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | Web Component  Framework  | [LWC](./lwc.md)                                                                                                                     |
-| Linting                   | [EsLint](./eslint.md)                                                                                                               |
-| Syntax                    | [Prettier](./prettier.md)                                                                                                           |
-| Git Actions               | [Husky](./husky.md)                                                                                                                 |
+| Linting & Syntax          | [EsLint](./eslint.md)                                                                                                               |
 | Unit Testing              | [Jest](./jest.md)                                                                                                                   |
 | Component Documentation   | [Storybook](./storybook.md)                                                                                                         |
 | Accesibility              | [Sa11y](./sa11y.md)                                                                                                                 |
 | Bundler                   | [Webpack](./webpack.md)                                                                                                             |
 | End to End Testing        | [Cypress](./cypress.md)                                                                                                             |
-| CI/CD Automation          | [Jenkins](./jenkins.md)                                                                                                             |
 | Translations              | [I18n](./i18n.md)                                                                                                                   |
 | Slug Analyzer             | [Webpack Bundle Analyzer](./webpack-bundle-analyzer.md)                                                                             |
 

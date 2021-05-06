@@ -1,7 +1,0 @@
-# Husky
-
-## Instalation
-
-## Configuration
-
-## Usage

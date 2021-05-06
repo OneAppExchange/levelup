@@ -1,7 +1,0 @@
-# Prettier
-
-## Instalation
-
-## Configuration
-
-## Usage
