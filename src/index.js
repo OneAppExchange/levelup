@@ -14,6 +14,13 @@ const change = () => {
     element.name = (new Date()).toString();
 };
 
+let container = document.getElementById("pricing-container");
+
+
+//container.addEventListener( "toggle", (e) => console.log(e) );
+
+
+
 document.getElementById('destroy').addEventListener( "click", destroy);
 document.getElementById('change').addEventListener( "click", change);
 

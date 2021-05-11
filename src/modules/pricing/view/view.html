@@ -9,13 +9,13 @@
     <lightning-input type="toggle" checked onclick={handleShowHideDates} label="Date option" message-toggle-active="show" message-toggle-inactive="hide"></lightning-input>
     <lightning-button label="toogle" onclick={handleToogleDates}></lightning-button>
 
-    <div ontoogle={handleToogleInTheParent}>
+    <div>
         <utils-list>
                 <div slot="header">
                     New Header total clicks {countClicks}
                 </div>    
                 <template for:each={countLogs} for:item="log" for:index="index">
-                    <div key={log.clickNum}>
+                    <div key={log.clickNum} >
                         <pricing-item time={log.time}></pricing-item>
                         <lightning-button data-index={index} label="toogle" onclick={handleToogleDate}></lightning-button>
                     </div>
