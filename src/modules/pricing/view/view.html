@@ -5,26 +5,28 @@
     <div>
         {reverseName}
     </div>
+<!--
 
     <lightning-input type="toggle" checked onclick={handleShowHideDates} label="Date option" message-toggle-active="show" message-toggle-inactive="hide"></lightning-input>
     <lightning-button label="toogle" onclick={handleToogleDates}></lightning-button>
-
+    
     <div ontoogle={handleToogleInTheParent}>
         <utils-list>
-                <div slot="header">
-                    New Header total clicks {countClicks}
-                </div>    
-                <template for:each={countLogs} for:item="log" for:index="index">
-                    <div key={log.clickNum}>
-                        <pricing-item time={log.time}></pricing-item>
-                        <lightning-button data-index={index} label="toogle" onclick={handleToogleDate}></lightning-button>
-                    </div>
-                </template>    
-                <div slot="footer">
-                    <lightning-button label="Add" onclick={handleButton}></lightning-button>
-                </div>    
+            <div slot="header">
+                New Header total clicks {countClicks}
+            </div>    
+            <template for:each={countLogs} for:item="log" for:index="index">
+                <div key={log.clickNum}>
+                    <pricing-item time={log.time}></pricing-item>
+                    <lightning-button data-index={index} label="toogle" onclick={handleToogleDate}></lightning-button>
+                </div>
+            </template>    
+            <div slot="footer">
+                <lightning-button label="Add" onclick={handleButton}></lightning-button>
+            </div>    
         </utils-list>    
     </div>
-        
+    
     <lightning-input label="Name" value={name} onchange={handleChange}></lightning-input>
+-->
 </template>
