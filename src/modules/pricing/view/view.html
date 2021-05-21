@@ -2,10 +2,9 @@
     <div class="pricing-title">
         Hello {name} !
     </div>
-<!--
 
-    <lightning-input type="toggle" checked onclick={handleShowHideDates} label="Date option" message-toggle-active="show" message-toggle-inactive="hide"></lightning-input>
-    <lightning-button label="toogle" onclick={handleToogleDates}></lightning-button>
+    <input type="toggle" checked onclick={handleShowHideDates} label="Date option" message-toggle-active="show" message-toggle-inactive="hide"></input>
+    <button label="toogle" onclick={handleToogleDates}></button>
     
     <div ontoogle={handleToogleInTheParent}>
         <utils-list>
@@ -15,15 +14,14 @@
             <template for:each={countLogs} for:item="log" for:index="index">
                 <div key={log.clickNum}>
                     <pricing-item time={log.time}></pricing-item>
-                    <lightning-button data-index={index} label="toogle" onclick={handleToogleDate}></lightning-button>
+                    <button data-index={index} label="toogle" onclick={handleToogleDate}></button>
                 </div>
             </template>    
             <div slot="footer">
-                <lightning-button label="Add" onclick={handleButton}></lightning-button>
+                <button label="Add" onclick={handleButton}></button>
             </div>    
         </utils-list>    
     </div>
     
-    <lightning-input label="Name" value={name} onchange={handleChange}></lightning-input>
--->
+    <input label="Name" value={name} onchange={handleChange}></input>
 </template>
