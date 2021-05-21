@@ -3,7 +3,7 @@
 
         <template if:true={books.data}>
             <div class="search">
-                <lightning-input type="search" onchange={handleSearchKeyChange} label="Search Books" value={queryParams.q} ></lightning-input>
+                Search Books<input type="search" onchange={handleSearchKeyChange} value={queryParams.q} ></input>
             </div>
             <ul>
                 <template for:each={books.data.items} for:item="book">
@@ -13,8 +13,8 @@
                 </template>
             </ul>
             <div class="buttons">
-                <lightning-button onclick={handlePreviousPage} label="Previous"></lightning-button>
-                <lightning-button onclick={handleNextPage} label="Next"></lightning-button>
+                <button onclick={handlePreviousPage} label="Previous"></button>
+                <button onclick={handleNextPage} label="Next"></button>
             </div>    
         </template>
         <template if:true={books.error}>
