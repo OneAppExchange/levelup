@@ -190,6 +190,16 @@ Good practices:
 * Toast for multiple errors or when a button is clicked 
 * Low level components and utils throws errors that high level component will handle
 * Create a Error display component that is reuse in the components
+* Distinguish Operational and  Programmer Errors
+> From the [Blog Error Handling in Node.js](https://www.joyent.com/node-js/production/design/errors)
+> Learn to distinguish between operational errors, which are anticipatable, unavoidable errors, even in correct programs (e.g., failing to connect to a server), and programmer errors, which are bugs in the program.
+> Operational errors can and should be handled. Programmer errors cannot be handled or reliably recovered from (nor should they be), and attempting to do so makes them harder to debug.
+> A given function should deliver operational errors either synchronously (with throw) or asynchronously (with a callback or event emitter), but not both. A user should be able to use try/catch or handle errors in the callback, but should never need both. In general, using throw and expecting a caller to use try/catch is pretty rare, since it’s not common in Node.js for synchronous functions to have operational errors. (The main exception are user input validation functions like JSON.parse.)
+> When writing a new function, document clearly the arguments that your function expects, their types, any other constraints (e.g., “must be a valid IP address”), the operational errors that can legitimately happen (e.g., failure to resolve a hostname, failure to connect to a server, any server-side error), and how those errors are delivered to the caller (synchronously, using throw, or asynchronously, using a callback or event emitter).
+> Missing or invalid arguments are programmer errors, and you should always throw when that happens. There may be gray area around what parameters the author decides are acceptable, but if you pass a function something other than what it’s documented to accept, that’s always a programmer error.
+> When delivering errors, use the standard Error class and its standard properties. Add as much additional information as may be useful in separate properties. Where possible, use conventional property names (see below).
+
+
 
 
 [Reduce errors](https://github.com/trailheadapps/lwc-recipes/blob/main/force-app/main/default/lwc/ldsUtils/ldsUtils.js)
