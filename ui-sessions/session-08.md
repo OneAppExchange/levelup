@@ -184,9 +184,11 @@ Important things to see:
 
 ## Display and Logging Errors
 
-Good practices:
+UI Good practices:
 * Display error near the point of failure
 * Toast for multiple errors or when a button is clicked 
+
+Service Good practices:
 * Low level components and utils throws errors that high level component will handle
 * Create a Error display component that is reuse in the components
 * Distinguish Operational and  Programmer Errors
