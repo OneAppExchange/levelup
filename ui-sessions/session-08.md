@@ -89,8 +89,7 @@ try {
 
 ### Custom Errors
 
-We can create our own Error object extending the standard Error. In this example we are using inheritance, notice that we are receiveng the stack strace from node. Before creating custom errors read why is not recommended, mostly when we are creating libraries, is good to stand to standard errors, and we may add new properties to those objects ( [read more](https://github.com/goldbergyoni/nodebestpractices/blob/master/sections/errorhandling/useonlythebuiltinerror.md) ).
-
+We can create our own Error object extending the standard Error. In this example we are using inheritance, notice that we are receiveng the stack strace from node. 
 
 ````
 class HttpError extends Error {
