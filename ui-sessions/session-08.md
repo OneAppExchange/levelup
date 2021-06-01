@@ -204,5 +204,4 @@ In production console.error has no value, and we will need to use another mechan
 
 ## Resources
 * [Best Practices article](https://developer.salesforce.com/blogs/2020/08/error-handling-best-practices-for-lightning-web-components.html)
-
-
+* [Node Error Handling best practices] (https://github.com/goldbergyoni/nodebestpractices#2-error-handling-practices)
