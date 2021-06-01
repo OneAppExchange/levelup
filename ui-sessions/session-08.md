@@ -89,7 +89,9 @@ try {
 
 ### Custom Errors
 
-We can create our own Error object extending the standard Error. This is a good example for use inheritance, we will receieve the stack trace. 
+We can create our own Error object extending the standard Error. In this example we are using inheritance, notice that we are receiveng the stack strace from node. Before creating custom errors read why is not recommended, mostly when we are creating libraries, is good to stand to standard errors, and we may add new properties to those objects ( [read more](https://github.com/goldbergyoni/nodebestpractices/blob/master/sections/errorhandling/useonlythebuiltinerror.md) ).
+
+
 ````
 class HttpError extends Error {
     constructor( status = 500, statusText, body, ...params) {
@@ -204,4 +206,5 @@ In production console.error has no value, and we will need to use another mechan
 
 ## Resources
 * [Best Practices article](https://developer.salesforce.com/blogs/2020/08/error-handling-best-practices-for-lightning-web-components.html)
-* [Node Error Handling best practices] (https://github.com/goldbergyoni/nodebestpractices#2-error-handling-practices)
+* [Node Error Handling best practices] (https://github.com/goldbergyoni/nodebestpractices#2-error-handling-practices) or [same content but nicer](https://www.bookstack.cn/read/goldbergyon-nodebestpractices-en/2.ErrorHandlingPractices.md)
+* [Blog Error Handling in Node.js](https://www.joyent.com/node-js/production/design/errors)
