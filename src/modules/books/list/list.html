@@ -1,23 +1,23 @@
 <template>
     <div class="container">
 
-        <template if:true={books.data}>
+        <template if:true={books}>
             <div class="search">
                 Search Books<input type="search" onchange={handleSearchKeyChange} value={queryParams.q} ></input>
             </div>
             <ul>
-                <template for:each={books.data.items} for:item="book">
+                <template for:each={books} for:item="book">
                     <li key={book.id} class="search-results">
-                        {book.volumeInfo.title}
+                        {book.name}
                     </li>
                 </template>
             </ul>
             <div class="buttons">
-                <button onclick={handlePreviousPage} label="Previous"></button>
-                <button onclick={handleNextPage} label="Next"></button>
+                <button onclick={handlePreviousPage} >Previous</button>
+                <button onclick={handleNextPage} >Next</button>
             </div>    
         </template>
-        <template if:true={books.error}>
+        <template if:true={error}>
             <div> Error: {books.error}></div>
         </template>
     </div>

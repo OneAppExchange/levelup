@@ -1,33 +1,31 @@
 const LWCWebpackPlugin = require('lwc-webpack-plugin');
 
 module.exports = {
-  "stories": [
-    "../src/**/*.stories.mdx",
-    "../src/**/*.stories.@(js|jsx|ts|tsx)"
-  ],
-  "addons": [
-    "@storybook/addon-docs",
-    "@storybook/addon-links",
-    "@storybook/addon-controls",
-    '@storybook/addon-a11y',
-    "@storybook/addon-essentials"
-  ],
-  webpackFinal: async (config, { configType }) => {
-    // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
-    // You can change the configuration based on that.
-    // 'PRODUCTION' is used when building the static version of storybook.
-    // Override default rules, prevents issues related to loading CSS files.
-    
-    config.plugins.push(
-      new LWCWebpackPlugin()
-    );
+    stories: [
+        '../src/**/*.stories.mdx',
+        '../src/**/*.stories.@(js|jsx|ts|tsx)'
+    ],
+    addons: [
+        '@storybook/addon-docs',
+        '@storybook/addon-links',
+        '@storybook/addon-controls',
+        '@storybook/addon-a11y',
+        '@storybook/addon-essentials'
+    ],
+    webpackFinal: async (config, { configType }) => {
+        // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
+        // You can change the configuration based on that.
+        // 'PRODUCTION' is used when building the static version of storybook.
+        // Override default rules, prevents issues related to loading CSS files.
 
-    config.module.rules = config.module.rules.filter(
-      f => f.test.toString() !== '/\\.css$/'
-    );   
-    
-    return config;
-  }
+        config.plugins.push(new LWCWebpackPlugin());
+
+        config.module.rules = config.module.rules.filter(
+            (f) => f.test.toString() !== '/\\.css$/'
+        );
+
+        return config;
+    }
 };
 
 /* 

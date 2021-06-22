@@ -23,7 +23,9 @@ export const getRecordUi = jest.fn();
  * @returns The field's value (which may be a record in the case of spanning fields), or undefined if the field isn't found.
  */
 export const getFieldValue = jest.fn((record, field) => {
-    const unqualifiedField = splitQualifiedFieldApiName(getFieldApiName(field))[1];
+    const unqualifiedField = splitQualifiedFieldApiName(
+        getFieldApiName(field)
+    )[1];
     const fields = unqualifiedField.split('.');
     let r = record;
     while (fields.length > 0 && r && r.fields) {
@@ -45,7 +47,9 @@ export const getFieldValue = jest.fn((record, field) => {
  * @returns The field's display value, or undefined if the field isn't found.
  */
 export const getFieldDisplayValue = jest.fn((record, field) => {
-    const unqualifiedField = splitQualifiedFieldApiName(getFieldApiName(field))[1];
+    const unqualifiedField = splitQualifiedFieldApiName(
+        getFieldApiName(field)
+    )[1];
     const fields = unqualifiedField.split('.');
     let r = record;
     while (r && r.fields) {

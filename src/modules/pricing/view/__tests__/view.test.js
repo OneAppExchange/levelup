@@ -26,7 +26,7 @@ describe('pricing-view', () => {
         const element = createElement('pricing-view', {
             is: View
         });
-        element.name = "my friends";
+        element.name = 'my friends';
 
         document.body.appendChild(element);
 
@@ -70,5 +70,4 @@ describe('pricing-view', () => {
         document.body.appendChild(element);
         return Promise.resolve().then(() => expect(element).toBeAccessible());
     });
-    
 });
