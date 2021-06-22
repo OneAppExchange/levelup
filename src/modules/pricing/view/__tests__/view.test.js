@@ -49,7 +49,7 @@ describe('pricing-view', () => {
         expect(div.textContent).not.toBe(`Hello ${EXPECTED}!`);
 
         // Trigger new Name
-        const inputEl = element.shadowRoot.querySelector('lightning-input');
+        const inputEl = element.shadowRoot.querySelector('input');
         inputEl.value = EXPECTED;
         inputEl.dispatchEvent(new CustomEvent('change'));
 

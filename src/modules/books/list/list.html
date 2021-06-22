@@ -3,7 +3,7 @@
 
         <template if:true={books}>
             <div class="search">
-                Search Books<input type="search" onchange={handleSearchKeyChange} value={queryParams.q} ></input>
+                {labels.search_books}<input type="search" onchange={handleSearchKeyChange} value={queryParams.q} ></input>
             </div>
             <ul>
                 <template for:each={books} for:item="book">
@@ -13,8 +13,8 @@
                 </template>
             </ul>
             <div class="buttons">
-                <button onclick={handlePreviousPage} >Previous</button>
-                <button onclick={handleNextPage} >Next</button>
+                <button onclick={handlePreviousPage} >{labels.previous}</button>
+                <button onclick={handleNextPage} >{labels.next}</button>
             </div>    
         </template>
         <template if:true={error}>

@@ -1,7 +1,16 @@
+import { WireI18n } from 'utils/wireI18n';
 import { useFetch, FetchClient, setFetchClient } from 'utils/fetch';
 import { LightningElement, wire, track } from 'lwc';
 
 export default class List extends LightningElement {
+    labels;
+    @wire(WireI18n)
+    i18nCallback(i18n) {
+        this.labels = i18n;
+        console.log(this.labels);
+        console.log(this.labels.next);        
+    }
+
     constructor() {
         super();
         const fetchClient = new FetchClient('https://www.googleapis.com');
@@ -18,7 +27,7 @@ export default class List extends LightningElement {
     })
     retrieveBooks( {error, data} ){
 
-        console.error( '***ERROR***\x1b[31m', error);
+        //console.error( '***ERROR***\x1b[31m', error);
         console.log( data);
 
         if (  data ) {
