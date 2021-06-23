@@ -147,19 +147,30 @@ export const WireI18n = createWireI18n(i18nStore);
 Now lets do some refactor to our component
 
 ````
-import { WireI18n } from 'utils/wireI18n';
+import { WireI18n, i18nStore } from 'utils/wireI18n';
 ````
 
 
 
 ````
     labels;
+    currentLanguage = 'en';
+
     @wire(WireI18n)
     i18nCallback(i18n) {
         this.labels = i18n;
         console.log(this.labels);
         console.log(this.labels.next);        
     }
+
+    @api get language(){
+        return this.currentLanguage;
+    }
+    set language(value){
+        this.currentLanguage = value;
+        i18nStore.setLanguage(value);
+    }
+
 ````
 
 
