@@ -1,0 +1,16 @@
+.header {
+    background-color: aqua;
+    font-size: large;
+    text-align: center;
+    padding: 3px;
+}
+
+.body {
+    background-color: bisque;
+}
+
+.footer {
+    background-color: aqua;
+    text-align: center;
+    padding: 3px;
+}

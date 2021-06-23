@@ -1,0 +1,27 @@
+<template>
+    <div class="pricing-title">
+        Hello {name} !
+    </div>
+
+    <input type="toggle" checked onclick={handleShowHideDates} label="Date option" message-toggle-active="show" message-toggle-inactive="hide"></input>
+    <button label="toogle" onclick={handleToogleDates}></button>
+    
+    <div ontoogle={handleToogleInTheParent}>
+        <utils-list>
+            <div slot="header">
+                New Header total clicks {countClicks}
+            </div>    
+            <template for:each={countLogs} for:item="log" for:index="index">
+                <div key={log.clickNum}>
+                    <pricing-item time={log.time}></pricing-item>
+                    <button data-index={index} label="toogle" onclick={handleToogleDate}></button>
+                </div>
+            </template>    
+            <div slot="footer">
+                <button label="Add" onclick={handleButton}></button>
+            </div>    
+        </utils-list>    
+    </div>
+    
+    <input label="Name" value={name} onchange={handleChange}></input>
+</template>
