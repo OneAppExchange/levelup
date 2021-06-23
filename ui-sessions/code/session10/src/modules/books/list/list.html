@@ -1,0 +1,24 @@
+<template>
+    <div class="container">
+
+        <template if:true={books}>
+            <div class="search">
+                {labels.search_books}<input type="search" onchange={handleSearchKeyChange} value={queryParams.q} ></input>
+            </div>
+            <ul>
+                <template for:each={books} for:item="book">
+                    <li key={book.id} class="search-results">
+                        {book.name}
+                    </li>
+                </template>
+            </ul>
+            <div class="buttons">
+                <button onclick={handlePreviousPage} >{labels.previous}</button>
+                <button onclick={handleNextPage} >{labels.next}</button>
+            </div>    
+        </template>
+        <template if:true={error}>
+            <div> Error: {books.error}></div>
+        </template>
+    </div>
+</template>

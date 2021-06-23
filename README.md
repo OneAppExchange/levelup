@@ -1,6 +1,7 @@
 # levelup-lwc
 
 ## Prerequisites
+
 Volta + Node + Yarn:
 
 ```bash
