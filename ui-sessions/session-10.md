@@ -48,8 +48,8 @@ Create a folder name messages under the src folder with two translation files
 ````
 mkdir messages
 cd messages
-touch en.json
-touch es.json
+touch messages.en.json
+touch messages.es.json
 ````
 
 In the English file
@@ -94,7 +94,7 @@ module.exports = {
     module: {
         rules: [
           {
-            test: [/\bmessages\.(json|ya?ml)$/, /\.properties$/],
+            test: [/\messages.(\w+)\.json$/],
             type: 'javascript/auto', // required by Webpack for JSON files
             use: [
                     {
@@ -127,7 +127,7 @@ touch wireI18n.ts
 Now lets add the code
 
 ````
-import bundledI18n from '../../../messages/en.json';
+import bundledI18n from '../../../messages/messages.en.json';
 import { createI18nStore, createWireI18n } from '@oneappexchange/lwc-wired-i18n';
 
 export const i18nStore = createI18nStore({
@@ -135,8 +135,8 @@ export const i18nStore = createI18nStore({
     defaultLanguage: 'en',  
     i18nModuleLoaders: {
         // Add additional languages here
-        en: () => import('../../../messages/en.json'),
-        es: () => import('../../../messages/es.json')
+        en: () => import('../../../messages/messages.en.json'),
+        es: () => import('../../../messages/messages.es.json')
     },
     developmentMode: process.env.NODE_ENV !== 'production'
 });

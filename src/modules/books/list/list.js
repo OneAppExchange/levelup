@@ -1,6 +1,6 @@
-import { WireI18n } from 'utils/wireI18n';
+import { WireI18n, i18nStore } from 'utils/wireI18n';
 import { useFetch, FetchClient, setFetchClient } from 'utils/fetch';
-import { LightningElement, wire, track } from 'lwc';
+import { LightningElement, wire, api, track } from 'lwc';
 
 export default class List extends LightningElement {
     labels;
@@ -17,6 +17,15 @@ export default class List extends LightningElement {
         setFetchClient(fetchClient);
     }
 
+    currentLanguage = 'en';
+    @api get language(){
+        return this.currentLanguage;
+    }
+    set language(value){
+        this.currentLanguage = value;
+        i18nStore.setLanguage(value);
+    }
+    
     @track queryParams = { q: 'Harry Potter', startIndex: 0 };
     @track books = [];
     @track error = '';

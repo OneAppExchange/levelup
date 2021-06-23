@@ -16,7 +16,7 @@ module.exports = {
     module: {
         rules: [
           {
-            test: [/\bmessages\.(json|ya?ml)$/, /\.properties$/],
+            test: [/\messages.(\w+)\.json$/],
             type: 'javascript/auto', // required by Webpack for JSON files
             use: [
                     {
