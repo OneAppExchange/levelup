@@ -15,8 +15,8 @@
     "lwc-services": "^3.0.4"
   },
   "scripts": {
-    "build": "lwc-services build -m production",
-    "build:development": "lwc-services build",
+    "build": "lwc-services build -m production -w webpack.config.js",
+    "build:development": "lwc-services build -w webpack.config.js",
     "test:unit": "lwc-services test:unit",
     "test:unit:coverage": "lwc-services test:unit --coverage",
     "test:unit:debug": "lwc-services test:unit --debug",

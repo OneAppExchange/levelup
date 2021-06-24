@@ -22,10 +22,10 @@ The most common way to start a LWC OSS projects is using create-lwc-app. But the
 
 We will go session by session. There is a branch per session so in case we want to see that running just clone it, and in case you want to skip to a session you can checkout the previous one.
 
-* UI Session
-* Service Sessions
-* QA Sessions
-* Tools
+* [UI Session](./ui-sessions/readme.md)
+* [Service Sessions](./service-sessions/readme.md)
+* [QA Sessions](./qa-sessions/readme.md)
+* [Tools](./tools/readme.md)
 
 
 
