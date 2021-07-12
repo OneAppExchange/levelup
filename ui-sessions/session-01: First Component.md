@@ -102,7 +102,7 @@ Let's create the lwc-service config file
 In the root folder we create the config file
 
 ```bash
-touch lwc-service.config.js
+touch lwc-services.config.js
 ```
 
 Add this content to lwc-service.config.js ( for more information of this config file [click here](https://github.com/muenzpraeger/create-lwc-app/blob/main/packages/lwc-services/example/lwc-services.config.js) )
