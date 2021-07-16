@@ -28,4 +28,4 @@ Let's start looking for some usefull
 
 ## Resources
 
-* [Salesforce Blog](https://developer.salesforce.com/blogs/2021/07/make-the-most-of-your-dx-projects-with-built-in-node-js-scripts.html)
+* [SF Blog Make the Most of Your DX Projects With Built-in Node.js Scripts](https://developer.salesforce.com/blogs/2021/07/make-the-most-of-your-dx-projects-with-built-in-node-js-scripts.html)
