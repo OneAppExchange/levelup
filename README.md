@@ -1,6 +1,5 @@
 # levelup-lwc
 
-https://salesforce.quip.com/PV7sAFnsGtWw
 
 ## Prerequisites
 
