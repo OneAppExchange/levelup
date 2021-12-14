@@ -13,7 +13,7 @@ Let's start looking for some usefull
 | Unit Testing              | [Jest](./jest.md)                                                                                                                   |
 | Component Documentation   | [Storybook](./storybook.md)                                                                                                         |
 | Accesibility              | [Sa11y](./sa11y.md)                                                                                                                 |
-| Bundler                   | [Webpack](./webpack.md)                                                                                                             |
+| Bundler                   | [Webpack](./webpack.md) & [Rollup](./rollup.md)                                                                                     |
 | End to End Testing        | [Cypress](./cypress.md)                                                                                                             |
 | Translations              | [I18n](./i18n.md)                                                                                                                   |
 | Slug Analyzer             | [Webpack Bundle Analyzer](./webpack-bundle-analyzer.md)                                                                             |
