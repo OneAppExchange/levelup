@@ -93,3 +93,10 @@ Refactor pyramid aligns with testing pyramid. Saying at the bottom we refactor F
 
 
 ## Localizing Invariants
+
+
+
+## Sessions
+
+### 1. [Session 01: Breaking up Functions](session-01:%20breaking%20up%20functions.md)
+### 2. [Session 02: Make Types Work](session-02:%20make%20types%20works.md))
