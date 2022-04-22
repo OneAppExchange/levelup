@@ -16,7 +16,6 @@ $ volta install node@14.16.0
 $ volta install yarn@1.22.10
 ```
 
-
 ## Sessions
 
 The most common way to start a LWC OSS projects is using create-lwc-app. But the idea here is to go step by step, installing, configuring, coding and testing so we can deeply understand what internally is going on.
